@@ -1,0 +1,49 @@
+<!-- 
+  Copyright (c) 2016 IBM Corp.
+ 
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+ 
+     http://www.apache.org/licenses/LICENSE-2.0
+ 
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<!DOCTYPE html>
+<html>
+    <!-- tag::head[] -->
+    <head>
+        <!-- tag::angular-libs[] -->
+        <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js'></script>
+        <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-resource.js'></script>
+        <!-- end::angular-libs[] -->
+        <!-- tag::js-import[] -->
+        <script src='./js/consume-rest.js'></script>
+        <!-- end::js-import[] -->
+    </head>
+    <!-- end::head[] -->
+    <!-- tag::body[] -->
+    <body ng-app='consumeRest'>
+        <!-- tag::controller[] -->
+        <div ng-controller='ArtistsController'>
+            <!-- tag::repeat[] -->
+            <div ng-repeat='artist in artists'>
+                <p>{{artist.name}} wrote {{artist.albums.length}} albums:</p>
+                <div ng-repeat='album in artist.albums'>
+                    <p style='text-indent: 20px'>
+                        Album titled <b>{{album.title}}</b> by 
+                                     <b>{{album.artist}}</b> contains 
+                                     <b>{{album.ntracks}}</b> tracks
+                    </p>
+                </div>
+            </div>
+            <!-- end::repeat[] -->
+        </div>
+        <!-- end::controller[] -->
+    </body>
+    <!-- end::body[] -->
+</html>

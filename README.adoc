@@ -1,0 +1,211 @@
+// Copyright (c) 2017 IBM Corporation and others.
+// Licensed under Creative Commons Attribution-NoDerivatives
+// 4.0 International (CC BY-ND 4.0)
+//   https://creativecommons.org/licenses/by-nd/4.0/
+//
+// Contributors:
+//     IBM Corporation
+:projectid: rest-client-angularjs
+:page-layout: guide
+:page-duration: 20 minutes
+:page-description: Learn how to consume a RESTful web service with AngularJS
+:page-tags: ['REST', 'Client', 'AngularJS']
+:page-permalink: /guides/{projectid}
+:common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/master
+:source-highlighter: prettify
+= Consuming a RESTful web service with AngularJS
+
+Explore how to access a simple RESTful web service and consume its resources with AngularJS.
+
+// =================================================================================================
+// Introduction
+// =================================================================================================
+
+== What you'll learn
+
+You will learn how to access a REST service and deserialize the returned JSON that contains a list of
+artists and their albums by using the high-level `$resource` service of AngularJS.
+
+The REST service that provides the artists and albums resource has already been written for you and
+responds with the following JSON:
+
+[source, json, role="no_copy"]
+----
+include::finish/src/resources/artists.json[]
+----
+
+You will implement an AngularJS client that consumes this JSON and displays its contents at the
+following URL:
+```
+http://localhost:9080
+```
+
+To learn more about REST services and how you can write them, see Creating a RESTful web service.
+https://openliberty.io/guides/rest-intro.html[Creating a RESTful web service].
+
+
+// =================================================================================================
+// Getting Started
+// =================================================================================================
+
+include::{common-includes}/gitclone.adoc[]
+
+
+// =================================================================================================
+// Starting the service
+// =================================================================================================
+
+== Starting the service
+
+Before you begin the implementation, start the provided REST service so that the artist JSON is
+available to you.
+
+To start the REST service, run the Maven `install` and `liberty:start-server` goals from the `start`
+directory:
+
+[source, role="no_copy"]
+----
+cd start
+mvn clean install
+mvn liberty:start-server
+----
+
+After you start the server, you can find your artist JSON at the following URL:
+
+```
+http://localhost:9080/artists
+```
+
+Any local changes to your JavaScript and HTML are picked up automatically. After you start the Open
+Liberty server, you do not need to restart it.
+
+
+// =================================================================================================
+// Guide
+// =================================================================================================
+
+== Creating the AngularJS Controller
+
+The AngularJS `$resource` service provides a set of high-level APIs that enable you to interact with
+RESTful web services.
+
+Begin by defining the application module. To take advantage of the `$resource` service, you must also
+include the `ngResource` module in your definition:
+
+`start/src/main/webapp/js/consume-rest.js`
+
+[source, javascript, indent=0]
+----
+include::finish/src/main/webapp/js/consume-rest.js[tags=module]
+----
+
+Next, define the `Artist` AngularJS service by using the Factory recipe. The Factory recipe
+constructs a new service instance by using the return value of a passed in function. In this case,
+the `$resource` module that was imported earlier is this passed in function. Target the artist JSON
+URL in the `$resource()` call.
+
+[source, javascript, indent=0]
+----
+include::finish/src/main/webapp/js/consume-rest.js[tags=factory]
+----
+
+Finally, create a controller and attach the `artist` property to its `$scope` parameter:
+
+[source, javascript, indent=0]
+----
+include::finish/src/main/webapp/js/consume-rest.js[tags=controller]
+----
+
+The controller controls the flow of data in your application. Each controller is instantiated with
+its own isolated scope, accessible through the `$scope` parameter. All data that is bound to this
+parameter is available in the view to which the controller is attached.
+
+The `artists` property can now be accessed from the template at the point in the Document Object
+Model (DOM) where the controller is registered.
+
+
+== Creating the AngularJS Template
+
+The starting point for your application has already been created for you under `start/src/main/webapp/index.html`.
+This file is your template and contains all AngularJS-specific elements and attributes.
+
+Before you bootstrap the application, you must first pull in two AngularJS libraries:
+
+[source, html, indent=0]
+----
+include::finish/src/main/webapp/index.html[tags=head;!js-import]
+----
+
+The first is the base AngularJS library and the second is responsible for providing the APIs for the
+`$resource` service.
+
+Of course, remember to import your JavaScript file:
+
+[source, html, indent=0]
+----
+include::finish/src/main/webapp/index.html[tags=head;!angular-libs]
+----
+
+Bootstrap your application by using the `consumeRest` module that you created earlier:
+
+[source, html, indent=0]
+----
+include::finish/src/main/webapp/index.html[tags=body;!controller]
+----
+
+Attach the `ArtistController` controller to the DOM:
+
+[source, html, indent=0]
+----
+include::finish/src/main/webapp/index.html[tags=body;!repeat]
+----
+
+The `artists` parameter can now be data-bounded to the template and accessed by using the `{{ artists }}`
+expression.
+
+You can use the `ng-repeat` directive to iterate over the contents of the `artists` parameter. Add a
+few styles and new elements for clarity and display the contents of the JSON:
+
+[source, html, indent=0]
+----
+include::finish/src/main/webapp/index.html[tags=body]
+----
+
+If everything was set up correctly, your application root will now display the following output:
+
+[subs="quotes", role="no_copy"]
+----
+foo wrote 2 albums:
+    Album titled *album_one* by *foo* contains *12* tracks
+    Album tilted *album_two* by *foo* contains *15* tracks
+bar wrote 1 albums:
+    Album titled *foo walks into a bar* by *bar* contains *12* tracks
+dj wrote 0 albums:
+----
+
+
+== Testing the AngularJS client
+
+Since there won't be any explicit code using the consumed artist JSON directly, you will not be
+writing any test cases for this guide.
+
+Whenever you make any changes to your AngularJS implementation, they will reflect automatically in
+the application root at `localhost:9080`. You can check manually if the artist JSON has been consumed
+correctly by visiting the root.
+
+While you did not build any logic in this guide, you most likely will be in your own applications. In
+this case, testing will become a crucial part of your app's lifecycle. Should you need to write test
+cases, please follow the official unit testing and E2E testing documentation available on the
+AngularJS website:
+```
+https://docs.angularjs.org/guide/unit-testing
+```
+
+
+== Great work! You're done!
+
+
+You accessed a simple RESTful web service and consumed its resources by using AngularJS.
+
+
+include::{common-includes}/finish.adoc[]
