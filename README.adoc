@@ -86,7 +86,7 @@ Liberty server, you do not need to restart it.
 
 == Creating the AngularJS Controller
 
-The AngularJS `$resource` service provides a set of high-level APIs that enable you to interact with
+The AngularJS `$resource` service provides a set of high-level APIs that enable interaction with
 RESTful web services.
 
 Begin by defining the application module. To take advantage of the `$resource` service, you must also
@@ -126,7 +126,7 @@ Model (DOM) where the controller is registered.
 
 == Creating the AngularJS Template
 
-The starting point for your application has already been created for you under `start/src/main/webapp/index.html`.
+You can find the starting point of your application under `start/src/main/webapp/index.html`.
 This file is your template and contains all AngularJS-specific elements and attributes.
 
 Before you bootstrap the application, you must first pull in two AngularJS libraries:
@@ -171,7 +171,7 @@ few styles and new elements for clarity and display the contents of the JSON:
 include::finish/src/main/webapp/index.html[tags=body]
 ----
 
-If everything was set up correctly, your application root will now display the following output:
+If everything was set up correctly, the following will be displayed at the application root:
 
 [subs="quotes", role="no_copy"]
 ----
@@ -186,16 +186,16 @@ dj wrote 0 albums:
 
 == Testing the AngularJS client
 
-Since there won't be any explicit code using the consumed artist JSON directly, you will not be
+Since there is no explicit code that uses the consumed artist JSON directly, you will not be
 writing any test cases for this guide.
 
-Whenever you make any changes to your AngularJS implementation, they will reflect automatically in
+Whenever you make any changes to your AngularJS implementation, they are reflected automatically in
 the application root at `localhost:9080`. You can check manually if the artist JSON has been consumed
 correctly by visiting the root.
 
-While you did not build any logic in this guide, you most likely will be in your own applications. In
-this case, testing will become a crucial part of your app's lifecycle. Should you need to write test
-cases, please follow the official unit testing and E2E testing documentation available on the
+Although you did not build any logic in this guide, you most likely will when you develop your own
+applications. In this case, testing becomes a crucial part of your development lifecycle. If you need
+to write test cases, follow the official unit testing and E2E testing documentation available on the
 AngularJS website:
 ```
 https://docs.angularjs.org/guide/unit-testing
