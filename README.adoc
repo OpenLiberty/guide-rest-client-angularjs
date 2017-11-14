@@ -26,7 +26,7 @@ Explore how to access a simple RESTful web service and consume its resources wit
 You will learn how to access a REST service and deserialize the returned JSON that contains a list of
 artists and their albums by using the high-level `$resource` service of AngularJS.
 
-The REST service that provides the artists and albums resource has already been written for you and
+The REST service that provides the artists and albums resource was written for you in advance and
 responds with the following JSON:
 
 [source, json, role="no_copy"]
@@ -190,7 +190,7 @@ Since there is no explicit code that uses the consumed artist JSON directly, you
 writing any test cases for this guide.
 
 Whenever you make any changes to your AngularJS implementation, they are reflected automatically in
-the application root at `localhost:9080`. You can check manually if the artist JSON has been consumed
+the application root at `localhost:9080`. You can check manually if the artist JSON was consumed
 correctly by visiting the root.
 
 Although you did not build any logic in this guide, you most likely will when you develop your own
