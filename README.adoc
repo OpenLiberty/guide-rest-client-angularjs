@@ -15,7 +15,8 @@
 :source-highlighter: prettify
 = Consuming a RESTful web service with AngularJS
 
-Explore how to access a simple RESTful web service and consume its resources with AngularJS.
+Explore how to access a simple RESTful web service and consume its resources with AngularJS in Open
+Liberty.
 
 // =================================================================================================
 // Introduction
@@ -130,22 +131,16 @@ Model (DOM) where the controller is registered.
 You can find the starting point of your application under `start/src/main/webapp/index.html`.
 This file is your template and contains all AngularJS-specific elements and attributes.
 
-Before you bootstrap the application, you must first pull in two AngularJS libraries:
-
-[source, html, indent=0]
-----
-include::finish/src/main/webapp/index.html[tags=head;!js-import]
-----
-
-The first is the base AngularJS library and the second is responsible for providing the APIs for the
-`$resource` service.
-
-Of course, remember to import your JavaScript file as well:
+Before you bootstrap the application, you must first pull in two AngularJS libraries, and of course,
+import your JavaScript file as well:
 
 [source, html, indent=0]
 ----
 include::finish/src/main/webapp/index.html[tags=head]
 ----
+
+The first import is the base AngularJS library and the second is responsible for providing the APIs
+for the `$resource` service.
 
 Bootstrap your application by using the `consumeRest` module that you created earlier:
 
@@ -207,7 +202,8 @@ https://docs.angularjs.org/guide/unit-testing
 == Great work! You're done!
 
 
-You accessed a simple RESTful web service and consumed its resources by using AngularJS.
+You've just accessed a simple RESTful web service and consumed its resources by using AngularJS in
+Open Liberty.
 
 
 include::{common-includes}/finish.adoc[]
