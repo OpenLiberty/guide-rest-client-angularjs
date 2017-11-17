@@ -40,7 +40,7 @@ following URL:
 http://localhost:9080
 ```
 
-To learn more about REST services and how you can write them, see Creating a RESTful web service.
+To learn more about REST services and how you can write them, see
 https://openliberty.io/guides/rest-intro.html[Creating a RESTful web service].
 
 
@@ -89,10 +89,11 @@ Liberty server, you do not need to restart it.
 The AngularJS `$resource` service provides a set of high-level APIs that enable interaction with
 RESTful web services.
 
-Begin by defining the application module. To take advantage of the `$resource` service, you must also
-include the `ngResource` module in your definition:
+Begin by defining the application module. To do so, create `consume-rest.js` under `start/src/main/webapp/js/`.
+To take advantage of the `$resource` service, you must also include the `ngResource` module in your
+definition:
 
-`start/src/main/webapp/js/consume-rest.js`
+`start/src/main/webapp/js/consume-rest.js`:
 
 [source, javascript, indent=0]
 ----
@@ -139,11 +140,11 @@ include::finish/src/main/webapp/index.html[tags=head;!js-import]
 The first is the base AngularJS library and the second is responsible for providing the APIs for the
 `$resource` service.
 
-Of course, remember to import your JavaScript file:
+Of course, remember to import your JavaScript file as well:
 
 [source, html, indent=0]
 ----
-include::finish/src/main/webapp/index.html[tags=head;!angular-libs]
+include::finish/src/main/webapp/index.html[tags=head]
 ----
 
 Bootstrap your application by using the `consumeRest` module that you created earlier:
@@ -171,7 +172,8 @@ few styles and new elements for clarity and display the contents of the JSON:
 include::finish/src/main/webapp/index.html[tags=body]
 ----
 
-If everything was set up correctly, the following will be displayed at the application root:
+If everything was set up correctly, point your browser to the application root (`localhost:9080`) and
+you will see the following output:
 
 [subs="quotes", role="no_copy"]
 ----
