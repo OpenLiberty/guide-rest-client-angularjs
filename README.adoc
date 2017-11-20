@@ -9,6 +9,7 @@
 :page-layout: guide
 :page-duration: 20 minutes
 :page-description: Learn how to consume a RESTful web service with AngularJS
+:page-releasedate: 2017-11-20
 :page-tags: ['REST', 'Client', 'AngularJS']
 :page-permalink: /guides/{projectid}
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/master
