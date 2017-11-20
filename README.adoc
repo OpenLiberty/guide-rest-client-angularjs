@@ -85,7 +85,7 @@ Liberty server, you do not need to restart it.
 // Guide
 // =================================================================================================
 
-== Creating the AngularJS Controller
+== Creating the AngularJS controller
 
 The AngularJS `$resource` service provides a set of high-level APIs that enable interaction with
 RESTful web services.
@@ -183,7 +183,9 @@ dj wrote 0 albums:
 
 No explicit code directly uses the consumed artist JSON file, so you do not need to write any test cases for this guide.
 
-Whenever you change your AngularJS implementation, the application root at the `localhost:9080` URL reflects the changes automatically. Visit the root to manually check whether the artist JSON file was consumed correctly.
+Whenever you change your AngularJS implementation, the application root at `localhost:9080` will
+reflect the changes automatically. You can visit the root to manually check whether the artist JSON
+file was consumed correctly.
 
 Although this guide did not teach you how to build logic, you will likely build logic when you develop your own
 applications, and testing will become a crucial part of your development lifecycle. If you need
@@ -195,7 +197,6 @@ https://docs.angularjs.org/guide/unit-testing
 
 
 == Great work! You're done!
-
 
 You have just accessed a simple RESTful web service and consumed its resources by using AngularJS in
 Open Liberty.
