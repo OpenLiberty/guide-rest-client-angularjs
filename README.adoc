@@ -59,7 +59,7 @@ include::{common-includes}/gitclone.adoc[]
 
 == Starting the service
 
-Before you begin the implementation, start the provided REST service so that the artist JSON file is
+Before you begin the implementation, start the provided REST service so that the artist JSON is
 available to you.
 
 To start the REST service, run the Maven `install` and `liberty:start-server` goals from the `start`
@@ -72,7 +72,7 @@ mvn clean install
 mvn liberty:start-server
 ----
 
-After you start the server, you can find your artist JSON file at the following URL:
+After you start the server, you can find your artist JSON at the following URL:
 
 ```
 http://localhost:9080/artists
@@ -91,9 +91,8 @@ Liberty server, you do not need to restart it.
 The AngularJS `$resource` service provides a set of high-level APIs that enable interaction with
 RESTful web services.
 
-Begin by defining the application module. Create a `consume-rest.js` file in the `start/src/main/webapp/js/` directory.
-To use the `$resource` service, also include the `ngResource` module in your
-definition:
+Begin by defining the application module. Create `consume-rest.js` under the `start/src/main/webapp/js`
+directory. To use the `$resource` service, also include the `ngResource` module in your definition:
 
 `start/src/main/webapp/js/consume-rest.js`:
 
@@ -129,7 +128,7 @@ Model (DOM) where the controller is registered.
 
 == Creating the AngularJS template
 
-You can find the starting point of your application under the `start/src/main/webapp/index.html` file.
+You can find the starting point of your application under `start/src/main/webapp/index.html`.
 This file is your template and contains all elements and attributes specific to AngularJS.
 
 Before you bootstrap the application, first pull in two AngularJS libraries and import your JavaScript file:
@@ -160,7 +159,7 @@ The `artists` parameter can now be data-bounded to the template and accessed wit
 expression.
 
 You can use the `ng-repeat` directive to iterate over the contents of the `artists` parameter. Add a
-few styles and new elements for clarity and display the contents of the JSON file:
+few styles and new elements for clarity and display the contents of the JSON:
 
 [source, html, indent=0]
 ----
@@ -182,11 +181,11 @@ dj wrote 0 albums:
 
 == Testing the AngularJS client
 
-No explicit code directly uses the consumed artist JSON file, so you do not need to write any test cases for this guide.
+No explicit code directly uses the consumed artist JSON, so you do not need to write any test cases for this guide.
 
 Whenever you change your AngularJS implementation, the application root at `localhost:9080` will
 reflect the changes automatically. You can visit the root to manually check whether the artist JSON
-file was consumed correctly.
+was consumed correctly.
 
 Although this guide did not teach you how to build logic, you will likely build logic when you develop your own
 applications, and testing will become a crucial part of your development lifecycle. If you need
