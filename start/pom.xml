@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <project xmlns="http://maven.apache.org/POM/4.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -82,12 +82,25 @@
                 </configuration>
                 <executions>
                     <execution>
+                        <!-- Installs the OL runtime -->
                         <id>install-liberty</id>
                         <phase>prepare-package</phase>
                         <goals>
                             <goal>install-server</goal>
                         </goals>
                     </execution>
+                    <!-- Package server -->
+                    <execution>
+                        <id>package-app</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>package-server</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>target/wlp-package</outputDirectory>
+                        </configuration>
+                    </execution>
+                     <!-- Install the app via loose config -->
                     <execution>
                         <id>install-app</id>
                         <phase>pre-integration-test</phase>
@@ -100,6 +113,7 @@
                             <installAppPackages>project</installAppPackages>
                         </configuration>
                     </execution>
+                    <!-- Test start and stop server -->
                     <execution>
                         <id>start-server</id>
                         <phase>pre-integration-test</phase>
@@ -112,13 +126,6 @@
                         <phase>post-integration-test</phase>
                         <goals>
                             <goal>stop-server</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>package-app</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>package-server</goal>
                         </goals>
                     </execution>
                 </executions>
