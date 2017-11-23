@@ -65,18 +65,13 @@ available to you.
 To start the REST service, run the Maven `install` and `liberty:start-server` goals from the `start`
 directory:
 
-[source, role="no_copy"]
+[source]
 ----
-cd start
 mvn clean install
 mvn liberty:start-server
 ----
 
-After you start the server, you can find your artist JSON at the following URL:
-
-```
-http://localhost:9080/artists
-```
+After you start the server, you can find your artist JSON at: http://localhost:9080/artists[http://localhost:9080/artists]
 
 Any local changes to your JavaScript and HTML are picked up automatically. After you start the Open
 Liberty server, you do not need to restart it.
