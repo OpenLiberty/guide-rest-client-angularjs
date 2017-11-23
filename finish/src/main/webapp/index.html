@@ -23,9 +23,9 @@
     </head>
     <!-- end::head[] -->
     <!-- tag::body[] -->
-    <body ng-app='consumeRest'>
+    <body ng-app='consumeRestApp'>
         <!-- tag::controller[] -->
-        <div ng-controller='ArtistsController'>
+        <div ng-controller='ArtistsCtrl'>
             <!-- tag::repeat[] -->
             <div ng-repeat='artist in artists'>
                 <p>{{artist.name}} wrote {{artist.albums.length}} albums:</p>

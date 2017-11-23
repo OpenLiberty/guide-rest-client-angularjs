@@ -1,5 +1,5 @@
 // tag::module[]
-var app = angular.module('consumeRest', ['ngResource']);
+var app = angular.module('consumeRestApp', ['ngResource']);
 // end::module[]
 
 // tag::factory[]
@@ -9,7 +9,7 @@ app.factory("artists", function($resource) {
 // end::factory[]
 
 // tag::controller[]
-app.controller("ArtistsController", function($scope, artists) {
+app.controller("ArtistsCtrl", function($scope, artists) {
     artists.query(function(data) {
         $scope.artists = data;
     }, function(err) {
