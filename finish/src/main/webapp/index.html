@@ -13,6 +13,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
+<!-- tag::html[] -->
 <!DOCTYPE html>
 <html>
     <!-- tag::head[] -->
@@ -28,12 +29,12 @@
         <div ng-controller='ArtistsCtrl'>
             <!-- tag::repeat[] -->
             <div ng-repeat='artist in artists'>
-                <p>{{artist.name}} wrote {{artist.albums.length}} albums:</p>
+                <p>{{ artist.name }} wrote {{ artist.albums.length }} albums:</p>
                 <div ng-repeat='album in artist.albums'>
                     <p style='text-indent: 20px'>
-                        Album titled <b>{{album.title}}</b> by 
-                                     <b>{{album.artist}}</b> contains 
-                                     <b>{{album.ntracks}}</b> tracks
+                        Album titled <b>{{ album.title }}</b> by 
+                                     <b>{{ album.artist }}</b> contains 
+                                     <b>{{ album.ntracks }}</b> tracks
                     </p>
                 </div>
             </div>
@@ -43,3 +44,4 @@
     </body>
     <!-- end::body[] -->
 </html>
+<!-- end::html[] -->
