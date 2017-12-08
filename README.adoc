@@ -11,6 +11,7 @@
 :page-description: Learn how to consume a RESTful web service with AngularJS
 :page-releasedate: 2017-11-20
 :page-tags: ['REST', 'Client', 'AngularJS']
+:page-related-guides: ['rest-intro', 'rest-client-java']
 :page-permalink: /guides/{projectid}
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/master
 :source-highlighter: prettify
