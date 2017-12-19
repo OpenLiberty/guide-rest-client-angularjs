@@ -51,11 +51,7 @@ https://openliberty.io/guides/rest-intro.html[Creating a RESTful web service].
 include::{common-includes}/gitclone.adoc[]
 
 
-// =================================================================================================
 // Starting the service
-// =================================================================================================
-
-== Starting the service
 
 Before you begin the implementation, start the provided REST service so that the artist JSON is
 available to you.
@@ -63,17 +59,14 @@ available to you.
 To start the REST service, run the Maven `install` and `liberty:start-server` goals from the `start`
 directory:
 
-[source]
-----
-mvn clean install
-mvn liberty:start-server
-----
+```
+mvn clean install liberty:start-server
+```
 
-After you start the server, you can find your artist JSON at the following URL: http://localhost:9080/artists
+When the server is running, you can find your service at http://localhost:9080/artists
 
-Any local changes to your JavaScript and HTML are picked up automatically. After you start the Open
-Liberty server, you do not need to restart it.
-
+Any local changes to your JavaScript and HTML are picked up automatically, so you do not need to restart
+your server.
 
 // =================================================================================================
 // Guide
@@ -137,14 +130,9 @@ Model (DOM) where the controller is registered.
 You can find the starting point of your application under `start/src/main/webapp/index.html`.
 This file is your template and will contain all elements and attributes specific to AngularJS.
 
-Replace the contents of `start/src/main/webapp/index.html` with the following:
+Before your application is bootstrapped, you must pull in two AngularJS libraries and import `consume-rest.js`.
 
-[source, html, indent=0]
-----
-include::finish/src/main/webapp/index.html[tags=html]
-----
-
-Before your application is bootstrapped, you must pull in two AngularJS libraries and import `consume-rest.js`:
+Append the following inside the `html` tag in `start/src/main/webapp/index.html`:
 
 [source, html, indent=0]
 ----
@@ -154,30 +142,39 @@ include::finish/src/main/webapp/index.html[tags=head]
 The first import is the base AngularJS library. The second library is responsible for providing the APIs
 for the `$resource` service.
 
-To bootstrap your application, attach the `consumeRestApp` application module to the `body` of your
-template:
+Next, add the relevant AngularJS code to bootstrap your application and create a new scope where your
+`artists` property will be accessible.
+
+Append the following inside the `html` tag and underneath the `head` tag in `start/src/main/webapp/index.html`:
+
+[source, html, indent=0]
+----
+include::finish/src/main/webapp/index.html[tags=body]
+----
+
+Lets break this down. Attaching the `consumeRestApp` application to the `body` element bootstraps
+the application:
 
 [source, html, role="no_copy", indent=0]
 ----
 include::finish/src/main/webapp/index.html[tags=body;!controller]
 ----
 
-Next, attach the `ArtistCtrl` controller to the DOM to create a new child scope. This will make the
-`artists` property of the `$scope` object available to access at the point in the DOM where the
-controller is attached:
+Attaching, the `ArtistCtrl` controller to the DOM creates a new child scope, from within which the
+`artists` property becomes available:
 
-[source, html, role="no_copy", , indent=0]
+[source, html, role="no_copy", indent=0]
 ----
-include::finish/src/main/webapp/index.html[tags=body;!repeat]
+include::finish/src/main/webapp/index.html[tags=controller;!repeat]
 ----
 
 Once the controller is attached, the `artists` property can be data-bounded to the template and accessed
 using the `{{ artists }}` expression. You can use the `ng-repeat` directive to iterate over the contents
 of the `artists` property:
 
-[source, html, indent=0]
+[source, html, role="no_copy", indent=0]
 ----
-include::finish/src/main/webapp/index.html[tags=body]
+include::finish/src/main/webapp/index.html[tags=repeat]
 ----
 
 After everything is set up, point your browser to the application root http://localhost:9080 to
@@ -202,10 +199,10 @@ Whenever you change your AngularJS implementation, the application root at http:
 reflect the changes automatically. You can visit the root to manually check whether the artist JSON
 was consumed correctly.
 
-Although this guide did not teach you how to build logic, you will likely build logic when you develop your own
-applications, and testing will become a crucial part of your development lifecycle. If you need
-to write test cases, follow the official unit testing and end-to-end testing documentation on the
-AngularJS website: https://docs.angularjs.org/guide/unit-testing.
+Although you did not build any logic that uses the consumed resources in this guide, you will likely
+need to when you develop your own applications. In that case, testing will become a crucial part of
+your development lifecycle. If you need to write test cases, follow the official unit testing and
+end-to-end testing documentation on the AngularJS website: https://docs.angularjs.org/guide/unit-testing.
 
 
 == Great work! You're done!
