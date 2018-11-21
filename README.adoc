@@ -88,7 +88,7 @@ Begin by registering your application module. Every application must contain at 
 application module, which will be bootstrapped to launch the application.
 
 
-[role="code_command hotspot=2", subs="quotes"]
+[role="code_command hotspot=2-3", subs="quotes"]
 ----
 Create `start/src/main/webapp/js/consume-rest.js` and define the application module `consumeRestApp`:
 ----
@@ -104,7 +104,7 @@ In the case of this guide, your application will need to communicate with the ar
 While there exists a variety of ways of doing this, you can use the fairly straightforward AngularJS
 `$resource` service.
 
-[role="code_command hotspot=2", subs="quotes"]
+[role="code_command hotspot=1-2", subs="quotes"]
 ----
 The `ngResource` module is registered as it is appended after `consumeRestApp`. 
 ----
@@ -112,7 +112,7 @@ The `ngResource` module is registered as it is appended after `consumeRestApp`.
 By registering another module, you are performing a dependency injection, exposing all functionalities
 of that module to your main application module.
 
-[role="code_command hotspot=6-8", subs="quotes"]
+[role="code_command hotspot=8", subs="quotes"]
 ----
 Next, the `Artist` AngularJS service is defined by using the Factory recipe. 
 ----
@@ -121,7 +121,7 @@ The Factory recipe constructs a new service instance with the return value of a 
 the `$resource` module that you imported earlier is the passed in function. Target the artist JSON
 URL in the `$resource()` call.
 
-[role="code_command hotspot=12-18", subs="quotes"]
+[role="code_command hotspot=7-12", subs="quotes"]
 ----
 The controller controls the flow of data in your application.
 ----
@@ -146,10 +146,10 @@ Replace the contents of `start/src/main/webapp/index.html` with the following:
 index.html
 [source, html, indent=0, linenums, role="code_column"]
 ----
-include::finish/src/main/webapp/index.html[tags=**]
+include::finish/src/main/webapp/index.html[tags=html]
 ----
 
-[role="code_command hotspot=20-24", subs="quotes"]
+[role="code_command hotspot=4-8", subs="quotes"]
 ----
 Before your application is bootstrapped, you must pull in two AngularJS libraries and import `consume-rest.js.
 ----
@@ -161,12 +161,12 @@ for the `$resource` service.
 To bootstrap your application, attach the `consumeRestApp` application module to the `body` of your
 template:
 
-[role="code_command hotspot=29-42", subs="quotes"]
+[role="code_command hotspot=11", subs="quotes"]
 ----
 The application is bootstrapped because the `consumeRestApp` application module is attached to the `body` of the template.
 ----
 
-[role="code_command hotspot=29", subs="quotes"]
+[role="code_command hotspot=13", subs="quotes"]
 ----
 Next, the `ArtistCtrl` controller is attached to the DOM to create a new child scope. 
 ----
@@ -178,7 +178,7 @@ controller is attached:
 Once the controller is attached, the `artists` property can be data-bounded to the template and accessed
 using the `{{ artists }}` expression. 
 
-[role="code_command hotspot=27-44", subs="quotes"]
+[role="code_command hotspot=11-28", subs="quotes"]
 ----
 You can use the `ng-repeat` directive to iterate over the contents
 of the `artists` property.
