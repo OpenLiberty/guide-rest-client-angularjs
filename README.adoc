@@ -112,7 +112,7 @@ The `ngResource` module is registered as it is appended after `consumeRestApp`.
 By registering another module, you are performing a dependency injection, exposing all functionalities
 of that module to your main application module.
 
-[role="code_command hotspot=8", subs="quotes"]
+[role="code_command hotspot=7-8", subs="quotes"]
 ----
 Next, the `Artist` AngularJS service is defined by using the Factory recipe. 
 ----
@@ -161,12 +161,12 @@ for the `$resource` service.
 To bootstrap your application, attach the `consumeRestApp` application module to the `body` of your
 template:
 
-[role="code_command hotspot=11", subs="quotes"]
+[role="code_command hotspot=11-12", subs="quotes"]
 ----
 The application is bootstrapped because the `consumeRestApp` application module is attached to the `body` of the template.
 ----
 
-[role="code_command hotspot=13", subs="quotes"]
+[role="code_command hotspot=13-14", subs="quotes"]
 ----
 Next, the `ArtistCtrl` controller is attached to the DOM to create a new child scope. 
 ----
