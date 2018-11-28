@@ -90,7 +90,7 @@ application module, which will be bootstrapped to launch the application.
 
 [role="code_command hotspot=1-13", subs="quotes"]
 ----
-Create the file.
+Create the `consume-rest` file.
 `start/src/main/webapp/js/consume-rest.js`
 ----
 
