@@ -190,7 +190,7 @@ was consumed correctly.
 Although this guide did not teach you how to build logic, you will likely build logic when you develop your own
 applications, and testing will become a crucial part of your development lifecycle. If you need
 to write test cases, follow the official unit testing and end-to-end testing documentation on the
-AngularJS website: https://docs.angularjs.org/guide/unit-testing.
+`AngularJS website`[https://docs.angularjs.org/guide/unit-testing].
 
 
 == Great work! You're done!
