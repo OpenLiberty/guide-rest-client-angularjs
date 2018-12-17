@@ -135,7 +135,7 @@ This file is your template and will contain all elements and attributes specific
 
 [role="code_command hotspot=1-22", subs="quotes"]
 ----
-Replace the contents of the file.
+Create the file.
 `start/src/main/webapp/index.html`
 ----
 
