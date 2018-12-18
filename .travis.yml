@@ -3,7 +3,7 @@ before_script:
 - unset _JAVA_OPTIONS
 - cd finish
 script:
-- mvn clean install
+- mvn -q clean install
 notifications:
   slack:
     template:
