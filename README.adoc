@@ -107,7 +107,7 @@ In the case of this guide, your application will need to communicate with the ar
 While there exists a variety of ways of doing this, you can use the fairly straightforward AngularJS
 [hotspot=3]`$resource` service.
 
-The [hotspot=1]`ngResource` module is registered as it is appended after `consumeRestApp`. 
+The [hotspot=1]`ngResource` module is registered as it is appended after [hotspot=1]`consumeRestApp`. 
 
 By registering another module, you are performing a dependency injection, exposing all functionalities
 of that module to your main application module.
@@ -115,7 +115,7 @@ of that module to your main application module.
 Next, the [hotspot=3-5]`Artist` AngularJS service is defined by using the Factory recipe. 
 
 The Factory recipe constructs a new service instance with the return value of a passed in function. In this case,
-the `$resource` module that you imported earlier is the passed in function. Target the artist JSON
+the [hotspot=3]`$resource` module that you imported earlier is the passed in function. Target the artist JSON
 URL in the `$resource()` call.
 
 The [hotspot=7-12]`controller` controls the flow of data in your application.
@@ -130,8 +130,8 @@ Model (DOM) where the controller is registered.
 
 == Creating the AngularJS template
 
-You can find the starting point of your application under `start/src/main/webapp/index.html`.
-This file is your template and will contain all elements and attributes specific to AngularJS.
+You will create the starting point of your application under `start/src/main/webapp/index.html`.
+This file will contain all elements and attributes specific to AngularJS.
 
 [role="code_command hotspot=1-22", subs="quotes"]
 ----
