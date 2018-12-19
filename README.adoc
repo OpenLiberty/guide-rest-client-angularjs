@@ -35,6 +35,7 @@ artists and their albums by using the high-level `$resource` service of AngularJ
 The REST service that provides the artists and albums resource was written for you in advance and
 responds with the [hotspot=1-32]`artists.json`.
 
+artists.json
 [source, json, linenums, role="code_column"]
 ----
 include::finish/src/resources/artists.json[]
