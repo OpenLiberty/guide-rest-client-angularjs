@@ -134,7 +134,7 @@ Model (DOM) where the controller is registered.
 You will create the starting point of your application under `start/src/main/webapp/index.html`.
 This file will contain all elements and attributes specific to AngularJS.
 
-[role="code_command hotspot=1-22", subs="quotes"]
+[role="code_command hotspot=1-26", subs="quotes"]
 ----
 Create the file.
 `start/src/main/webapp/index.html`
