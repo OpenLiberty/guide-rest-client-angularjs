@@ -146,14 +146,14 @@ index.html
 include::finish/src/main/webapp/index.html[tags=html]
 ----
 
-Before your application is bootstrapped, you must pull in two [hotspot=4-5]`AngularJS` libraries and import [hotspot=6]`consume-rest.js`.
+Before your application is bootstrapped, you must pull in two [hotspot=4-9]`AngularJS` libraries and import [hotspot=10]`consume-rest.js`.
 
 The first import is the base AngularJS library. The second library is responsible for providing the APIs
 for the `$resource` service.
 
-The application is bootstrapped because the [hotspot=8]`consumeRestApp` application module is attached to the `body` of the template.
+The application is bootstrapped because the [hotspot=12]`consumeRestApp` application module is attached to the `body` of the template.
 
-Next, the [hotspot=9]`ArtistCtrl` controller is attached to the DOM to create a new child scope. 
+Next, the [hotspot=13]`ArtistCtrl` controller is attached to the DOM to create a new child scope. 
 
 This will make the
 `artists` property of the `$scope` object available to access at the point in the DOM where the
@@ -162,7 +162,7 @@ controller is attached:
 Once the controller is attached, the `artists` property can be data-bounded to the template and accessed
 using the `{{ artists }}` expression. 
 
-You can use the [hotspot=10]`ng-repeat` directive to iterate over the contents
+You can use the [hotspot=14]`ng-repeat` directive to iterate over the contents
 of the `artists` property.
 
 
