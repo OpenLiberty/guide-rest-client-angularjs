@@ -136,7 +136,7 @@ This file will contain all elements and attributes specific to AngularJS.
 
 [role="code_command hotspot=1-26", subs="quotes"]
 ----
-Create the file.
+Create the starting point of your application.
 `start/src/main/webapp/index.html`
 ----
 
