@@ -104,7 +104,7 @@ include::finish/src/main/webapp/js/consume-rest.js[tags=**]
 The application module is defined by [hotspot=1]`consumeRestApp`.
 
 Your application will need some way of communicating with RESTful web services in order to retrieve their resources.
-In the case of this guide, your application will need to communicate with the artist service to retrieve the artist JSON.
+In the case of this guide, your application will need to communicate with the artists service to retrieve the artists JSON.
 While there exists a variety of ways of doing this, you can use the fairly straightforward AngularJS
 [hotspot=3]`$resource` service.
 
@@ -113,7 +113,7 @@ The [hotspot=1]`ngResource` module is registered as it is appended after [hotspo
 By registering another module, you are performing a dependency injection, exposing all functionalities
 of that module to your main application module.
 
-Next, the [hotspot=3-5]`Artist` AngularJS service is defined by using the Factory recipe. 
+Next, the [hotspot=3-5]`Artists` AngularJS service is defined by using the Factory recipe. 
 
 The Factory recipe constructs a new service instance with the return value of a passed in function. In this case,
 the [hotspot=3]`$resource` module that you imported earlier is the passed in function. Target the artist JSON
