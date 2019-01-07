@@ -42,7 +42,7 @@ include::finish/src/resources/artists.json[]
 ----
 
 You will implement an AngularJS client that consumes this JSON and displays its contents at the
-following URL: http://localhost:9080
+following URL: http://localhost:9080.
 
 To learn more about REST services and how you can write them, see
 https://openliberty.io/guides/rest-intro.html[Creating a RESTful web service].
@@ -69,11 +69,11 @@ directory:
 
 [role='command']
 ----
-mvn clean install
-mvn liberty:start-server
+cd start
+mvn install liberty:start-server
 ----
 
-After you start the server, you can find your artist JSON at the following URL: http://localhost:9080/artists
+After you start the server, you can find your artist JSON at the following URL: http://localhost:9080/artists.
 
 Any local changes to your JavaScript and HTML are picked up automatically. After you start the Open
 Liberty server, you do not need to restart it.
@@ -92,7 +92,7 @@ application module, which will be bootstrapped to launch the application.
 [role="code_command hotspot=1-13", subs="quotes"]
 ----
 Create the `consume-rest` file.
-`start/src/main/webapp/js/consume-rest.js`
+`src/main/webapp/js/consume-rest.js`
 ----
 
 consume-rest.js
@@ -117,9 +117,9 @@ Next, the [hotspot=3-5]`Artists` AngularJS service is defined by using the Facto
 
 The Factory recipe constructs a new service instance with the return value of a passed in function. In this case,
 the [hotspot=3]`$resource` module that you imported earlier is the passed in function. Target the artist JSON
-URL in the `$resource()` call.
+URL in the [hotspot=4]`$resource()` call.
 
-The [hotspot=7-12]`controller` controls the flow of data in your application.
+The [hotspot=7-13]`controller` controls the flow of data in your application.
 
 Each controller is instantiated with
 its own isolated scope, accessible through the [hotspot=9]`$scope` parameter. All data that is bound to this
@@ -131,13 +131,13 @@ Model (DOM) where the controller is registered.
 
 == Creating the AngularJS template
 
-You will create the starting point of your application under `start/src/main/webapp/index.html`.
+You will create the starting point of your application.
 This file will contain all elements and attributes specific to AngularJS.
 
-[role="code_command hotspot=1-26", subs="quotes"]
+[role="code_command hotspot=1-26 file=0", subs="quotes"]
 ----
 Create the starting point of your application.
-`start/src/main/webapp/index.html`
+`src/main/webapp/index.html`
 ----
 
 index.html
@@ -146,24 +146,30 @@ index.html
 include::finish/src/main/webapp/index.html[tags=html]
 ----
 
-Before your application is bootstrapped, you must pull in two [hotspot=4-9]`AngularJS` libraries and import [hotspot=10]`consume-rest.js`.
+consume-rest.js
+[source, javascript, linenums, role="code_column"]
+----
+include::finish/src/main/webapp/js/consume-rest.js[tags=**]
+----
+
+Before your application is bootstrapped, you must pull in two [hotspot=4-9 file=0]`AngularJS` libraries and import [hotspot=10 file=0]`consume-rest.js`.
 
 The first import is the base AngularJS library. The second library is responsible for providing the APIs
 for the `$resource` service.
 
-The application is bootstrapped because the [hotspot=12]`consumeRestApp` application module is attached to the `body` of the template.
+The application is bootstrapped because the [hotspot=12 file=0]`consumeRestApp` application module is attached to the [hotspot=12-25 file=0]`body` of the template.
 
-Next, the [hotspot=13]`ArtistCtrl` controller is attached to the DOM to create a new child scope. 
+Next, the [hotspot=13 file=0]`ArtistCtrl` controller is attached to the DOM to create a new child scope. 
 
-This will make the
-`artists` property of the `$scope` object available to access at the point in the DOM where the
-controller is attached:
+The controller will make the
+[hotspot=9 file=1]`artists` property of the [hotspot=9 file=1]`$scope` object available to access at the point in the DOM where the
+controller is attached.
 
-Once the controller is attached, the `artists` property can be data-bounded to the template and accessed
-using the `{{ artists }}` expression. 
+Once the controller is attached, the [hotspot=14 file=0]`artists` property can be data-bounded to the template and accessed
+using the [hotspot=15 file=0]`{{ artists }}` expression. 
 
-You can use the [hotspot=14]`ng-repeat` directive to iterate over the contents
-of the `artists` property.
+You can use the [hotspot=14 file=0]`ng-repeat` directive to iterate over the contents
+of the [hotspot=14 file=0]`artists` property.
 
 
 After everything is set up, point your browser to the application root http://localhost:9080 to
