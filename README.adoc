@@ -70,7 +70,6 @@ directory:
 
 [role='command']
 ----
-cd start
 mvn install liberty:start-server
 ----
 
@@ -98,7 +97,7 @@ application module, which will be bootstrapped to launch the application.
 
 [role="code_command hotspot=1-13", subs="quotes"]
 ----
-Create the `consume-rest` file.
+#Create the `consume-rest` file.#
 `src/main/webapp/js/consume-rest.js`
 ----
 
@@ -137,7 +136,7 @@ This file will contain all elements and attributes specific to AngularJS.
 
 [role="code_command hotspot=1-26 file=0", subs="quotes"]
 ----
-Create the starting point of your application.
+#Create the starting point of your application.#
 `src/main/webapp/index.html`
 ----
 
