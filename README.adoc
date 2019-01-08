@@ -15,6 +15,7 @@
 :page-permalink: /guides/{projectid}
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/master
 :source-highlighter: prettify
+:guide-author: Open Liberty
 = Consuming a RESTful web service with AngularJS
 
 [.hidden]
@@ -77,6 +78,12 @@ After you start the server, you can find your artist JSON at the following URL: 
 
 Any local changes to your JavaScript and HTML are picked up automatically. After you start the Open
 Liberty server, you do not need to restart it.
+
+When you are done checking out the services, stop the Open Liberty server by running the following command:
+[role='command']
+```
+mvn liberty:stop-server
+```
 
 
 // =================================================================================================
