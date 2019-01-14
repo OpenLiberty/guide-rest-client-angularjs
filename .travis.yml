@@ -5,8 +5,7 @@ before_script:
 script:
 - mvn -q clean install
 - mvn -q liberty:start-server
-- set -e;
-  status="$(curl --write-out "%{http_code}\n" --silent --output /dev/null "http://localhost:9080/artists")";
+- status="$(curl --write-out "%{http_code}\n" --silent --output /dev/null "http://localhost:9080/artists")";
   if [ $status == "200" ]; then
      echo ENDPOINT OK;
      echo $status
