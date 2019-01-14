@@ -199,6 +199,5 @@ You have just accessed a simple RESTful web service and consumed its resources b
 Open Liberty.
 
 
-include::{common-includes}/finish.adoc[]
 
 include::https://raw.githubusercontent.com/OpenLiberty/guides-common/multipane/attribution.adoc[subs="attributes"]
