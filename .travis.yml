@@ -11,7 +11,7 @@ script:
   else
      echo NOT RESPONDING ENDPOINT;
      exit 1;
-  fi
+  fi;
 - mvn -q liberty:stop-server
 notifications:
   slack:
