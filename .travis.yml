@@ -5,7 +5,7 @@ before_script:
 script:
 - mvn -q clean install
 - mvn -q liberty:start-server
-- ./endpointTestScript
+- bash .endpointTestScript
 - mvn -q liberty:stop-server
 
 notifications:
