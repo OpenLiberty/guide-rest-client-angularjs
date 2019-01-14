@@ -8,10 +8,10 @@ script:
 - status="$(curl -Is http://localhost:9080/artists | head -1)"
 - validate=( $stats )
   if [ ${validate[-2]} == "200" ]; then
-     echo ENDPOINT OK
+     echo ENDPOINT OK;
   else
-     echo NOT RESPONDING ENDPOINT
-     exit 1
+     echo NOT RESPONDING ENDPOINT;
+     exit 1;
   fi
 - mvn -q liberty:stop-server
 notifications:
