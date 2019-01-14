@@ -4,6 +4,7 @@ before_script:
 - cd finish
 script:
 - mvn -q clean install
+- mvn -q liberty:stop-server
 - status="$(curl -Is http://localhost:9080/artists | head -1)";
   if [ $status == "" ]; then
      echo NOT RESPONDING ENDPOINT;
@@ -11,7 +12,7 @@ script:
   else
      echo ENDPOINT OK;
   fi;
-- mvn -q liberty:stop-server
+
 notifications:
   slack:
     template:
