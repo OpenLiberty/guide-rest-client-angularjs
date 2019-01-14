@@ -4,18 +4,9 @@ before_script:
 - cd finish
 script:
 - mvn -q clean install
-# - mvn -q liberty:start-server
+- mvn -q liberty:start-server
+- ./endpointTestScript
 - mvn -q liberty:stop-server
-- set -e
-  status="$(curl --write-out "%{http_code}\n" --silent --output /dev/null "http://localhost:9080/artists")";
-  if [ $status == "200" ]; then
-     echo ENDPOINT OK;
-     echo $status
-  else
-     echo ENDPOINT NOT RESPONDING;
-     echo $status;
-  fi;
-# - mvn -q liberty:stop-server
 
 notifications:
   slack:
