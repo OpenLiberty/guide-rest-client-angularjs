@@ -2,10 +2,11 @@ language: java
 before_script:
 - unset _JAVA_OPTIONS
 - cd finish
+- chmod +x .endpointTestScript.sh
 script:
 - mvn -q clean install
 - mvn -q liberty:start-server
-- bash .endpointTestScript
+- ./endpointTestScript.sh
 - mvn -q liberty:stop-server
 
 notifications:
