@@ -91,6 +91,8 @@ mvn liberty:stop-server
 
 == Creating the AngularJS controller
 
+Navigate to the start directory to begin. 
+
 Begin by registering your application module. Every application must contain at least one module, the
 application module, which will be bootstrapped to launch the application.
 
