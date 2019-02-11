@@ -34,7 +34,7 @@ You will learn how to access a REST service and deserialize the returned JSON th
 artists and their albums by using the high-level `$resource` service of AngularJS.
 
 The REST service that provides the artists and albums resource was written for you in advance and
-responds with the [hotspot=1-32]`artists.json`.
+responds with the [hotspot]`artists.json`.
 
 artists.json
 [source, json, linenums, role="code_column"]
@@ -97,7 +97,7 @@ Begin by registering your application module. Every application must contain at 
 application module, which will be bootstrapped to launch the application.
 
 
-[role="code_command hotspot=1-13", subs="quotes"]
+[role="code_command hotspot", subs="quotes"]
 ----
 #Create the `consume-rest` file.#
 `src/main/webapp/js/consume-rest.js`
@@ -136,7 +136,7 @@ Model (DOM) where the controller is registered.
 You will create the starting point of your application.
 This file will contain all elements and attributes specific to AngularJS.
 
-[role="code_command hotspot=1-26 file=0", subs="quotes"]
+[role="code_command hotspot file=0", subs="quotes"]
 ----
 #Create the starting point of your application.#
 `src/main/webapp/index.html`
