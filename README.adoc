@@ -43,10 +43,10 @@ include::finish/src/resources/artists.json[]
 ----
 
 You will implement an AngularJS client that consumes this JSON and displays its contents at the
-following URL: http://localhost:9080.
+following URL: http://localhost:9080[window="_blank"].
 
 To learn more about REST services and how you can write them, see
-https://openliberty.io/guides/rest-intro.html[Creating a RESTful web service].
+https://openliberty.io/guides/rest-intro.html[Creating a RESTful web service^].
 
 
 // =================================================================================================
@@ -73,7 +73,7 @@ directory:
 mvn install liberty:start-server
 ----
 
-After you start the server, you can find your artist JSON at the following URL: http://localhost:9080/artists.
+After you start the server, you can find your artist JSON at the following URL: http://localhost:9080/artists[window="_blank"].
 
 Any local changes to your JavaScript and HTML are picked up automatically. After you start the Open
 Liberty server, you do not need to restart it.
@@ -167,7 +167,7 @@ Once the controller is attached, the [hotspot=14 file=0]`artists` property can b
 using the [hotspot=15 file=0]`{{ artists }}` expression. You can use the [hotspot=14 file=0]`ng-repeat` directive to iterate over the contents
 of the [hotspot=14 file=0]`artists` property.
 
-After everything is set up, point your browser to the application root http://localhost:9080 to
+After everything is set up, point your browser to the application root http://localhost:9080[window="_blank"] to
 see the following output:
 
 [subs="quotes", role="no_copy"]
@@ -185,14 +185,14 @@ dj wrote 0 albums:
 
 No explicit code directly uses the consumed artist JSON, so you do not need to write any test cases for this guide.
 
-Whenever you change your AngularJS implementation, the application root at http://localhost:9080 will
+Whenever you change your AngularJS implementation, the application root at http://localhost:9080[window="_blank"] will
 reflect the changes automatically. You can visit the root to manually check whether the artist JSON
 was consumed correctly.
 
 Although this guide did not teach you how to build logic, you will likely build logic when you develop your own
 applications, and testing will become a crucial part of your development lifecycle. If you need
 to write test cases, follow the official unit testing and end-to-end testing documentation on the
-https://docs.angularjs.org/guide/unit-testing[official AngularJS page].
+https://docs.angularjs.org/guide/unit-testing[official AngularJS page^].
 
 
 == Great work! You're done!
