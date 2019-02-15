@@ -78,12 +78,6 @@ After you start the server, you can find your artist JSON at the following URL: 
 Any local changes to your JavaScript and HTML are picked up automatically. After you start the Open
 Liberty server, you do not need to restart it.
 
-When you are done checking out the services, stop the Open Liberty server by running the following command:
-[role='command']
-```
-mvn liberty:stop-server
-```
-
 
 // =================================================================================================
 // Guide
@@ -188,6 +182,12 @@ No explicit code directly uses the consumed artist JSON, so you do not need to w
 Whenever you change your AngularJS implementation, the application root at http://localhost:9080[http://localhost:9080^] will
 reflect the changes automatically. You can visit the root to manually check whether the artist JSON
 was consumed correctly.
+
+When you are done checking the application root, stop the Open Liberty server by running the following command:
+[role='command']
+```
+mvn liberty:stop-server
+```
 
 Although this guide did not teach you how to build logic, you will likely build logic when you develop your own
 applications, and testing will become a crucial part of your development lifecycle. If you need
