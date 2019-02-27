@@ -200,6 +200,4 @@ https://docs.angularjs.org/guide/unit-testing[official AngularJS page].
 You have just accessed a simple RESTful web service and consumed its resources by using AngularJS in
 Open Liberty.
 
-
-
-include::https://raw.githubusercontent.com/OpenLiberty/guides-common/multipane/attribution.adoc[subs="attributes"]
+include::{common-includes}/attribution.adoc[subs="attributes"]
