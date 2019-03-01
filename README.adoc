@@ -1,4 +1,4 @@
-// Copyright (c) 2017 IBM Corporation and others.
+// Copyright (c) 2017, 2019 IBM Corporation and others.
 // Licensed under Creative Commons Attribution-NoDerivatives
 // 4.0 International (CC BY-ND 4.0)
 //   https://creativecommons.org/licenses/by-nd/4.0/
@@ -45,6 +45,7 @@ include::finish/src/resources/artists.json[]
 You will implement an AngularJS client that consumes this JSON and displays its contents at the
 following URL: http://localhost:9080[http://localhost:9080^].
 
+
 To learn more about REST services and how you can write them, see
 https://openliberty.io/guides/rest-intro.html[Creating a RESTful web service^].
 
@@ -75,8 +76,15 @@ mvn install liberty:start-server
 
 After you start the server, you can find your artist JSON at the following URL: http://localhost:9080/artists[http://localhost:9080/artists^].
 
+
 Any local changes to your JavaScript and HTML are picked up automatically. After you start the Open
 Liberty server, you do not need to restart it.
+
+When you are done checking out the services, stop the Open Liberty server by running the following command:
+[role='command']
+```
+mvn liberty:stop-server
+```
 
 
 // =================================================================================================
@@ -116,6 +124,7 @@ of that module to your main application module.
 Next, the [hotspot=3-5]`Artists` AngularJS service is defined by using the Factory recipe. The Factory recipe constructs a new service instance with the return value of a passed in function. In this case,
 the [hotspot=3]`$resource` module that you imported earlier is the passed in function. Target the artist JSON
 URL in the [hotspot=4]`$resource()` call. 
+
 
 The [hotspot=7-13]`controller` controls the flow of data in your application.Each controller is instantiated with
 its own isolated scope, accessible through the [hotspot=9]`$scope` parameter. All data that is bound to this
@@ -195,11 +204,10 @@ to write test cases, follow the official unit testing and end-to-end testing doc
 https://docs.angularjs.org/guide/unit-testing[official AngularJS page^].
 
 
+
 == Great work! You're done!
 
 You have just accessed a simple RESTful web service and consumed its resources by using AngularJS in
 Open Liberty.
-
-
 
 include::{common-includes}/attribution.adoc[subs="attributes"]
