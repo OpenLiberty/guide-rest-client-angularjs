@@ -34,7 +34,7 @@ You will learn how to access a REST service and deserialize the returned JSON th
 artists and their albums by using the high-level `$resource` service of AngularJS.
 
 The REST service that provides the artists and albums resource was written for you in advance and
-responds with the [hotspot=1-32]`artists.json`.
+responds with the [hotspot]`artists.json`.
 
 artists.json
 [source, json, linenums, role="code_column"]
@@ -43,10 +43,11 @@ include::finish/src/resources/artists.json[]
 ----
 
 You will implement an AngularJS client that consumes this JSON and displays its contents at the
-following URL: http://localhost:9080.
+following URL: http://localhost:9080[http://localhost:9080^].
+
 
 To learn more about REST services and how you can write them, see
-https://openliberty.io/guides/rest-intro.html[Creating a RESTful web service].
+https://openliberty.io/guides/rest-intro.html[Creating a RESTful web service^].
 
 
 // =================================================================================================
@@ -73,7 +74,8 @@ directory:
 mvn install liberty:start-server
 ----
 
-After you start the server, you can find your artist JSON at the following URL: http://localhost:9080/artists.
+After you start the server, you can find your artist JSON at the following URL: http://localhost:9080/artists[http://localhost:9080/artists^].
+
 
 Any local changes to your JavaScript and HTML are picked up automatically. After you start the Open
 Liberty server, you do not need to restart it.
@@ -97,7 +99,7 @@ Begin by registering your application module. Every application must contain at 
 application module, which will be bootstrapped to launch the application.
 
 
-[role="code_command hotspot=1-13", subs="quotes"]
+[role="code_command hotspot", subs="quotes"]
 ----
 #Create the `consume-rest` file.#
 `src/main/webapp/js/consume-rest.js`
@@ -123,6 +125,7 @@ Next, the [hotspot=3-5]`Artists` AngularJS service is defined by using the Facto
 the [hotspot=3]`$resource` module that you imported earlier is the passed in function. Target the artist JSON
 URL in the [hotspot=4]`$resource()` call. 
 
+
 The [hotspot=7-13]`controller` controls the flow of data in your application.Each controller is instantiated with
 its own isolated scope, accessible through the [hotspot=9]`$scope` parameter. All data that is bound to this
 parameter is available in the view to which the controller is attached.
@@ -136,7 +139,7 @@ Model (DOM) where the controller is registered.
 You will create the starting point of your application.
 This file will contain all elements and attributes specific to AngularJS.
 
-[role="code_command hotspot=1-26 file=0", subs="quotes"]
+[role="code_command hotspot file=0", subs="quotes"]
 ----
 #Create the starting point of your application.#
 `src/main/webapp/index.html`
@@ -167,7 +170,7 @@ Once the controller is attached, the [hotspot=14 file=0]`artists` property can b
 using the [hotspot=15 file=0]`{{ artists }}` expression. You can use the [hotspot=14 file=0]`ng-repeat` directive to iterate over the contents
 of the [hotspot=14 file=0]`artists` property.
 
-After everything is set up, point your browser to the application root http://localhost:9080 to
+After everything is set up, point your browser to the application root http://localhost:9080[http://localhost:9080^] to
 see the following output:
 
 [subs="quotes", role="no_copy"]
@@ -185,14 +188,21 @@ dj wrote 0 albums:
 
 No explicit code directly uses the consumed artist JSON, so you do not need to write any test cases for this guide.
 
-Whenever you change your AngularJS implementation, the application root at http://localhost:9080 will
+Whenever you change your AngularJS implementation, the application root at http://localhost:9080[http://localhost:9080^] will
 reflect the changes automatically. You can visit the root to manually check whether the artist JSON
 was consumed correctly.
+
+When you are done checking the application root, stop the Open Liberty server by running the following command:
+[role='command']
+```
+mvn liberty:stop-server
+```
 
 Although this guide did not teach you how to build logic, you will likely build logic when you develop your own
 applications, and testing will become a crucial part of your development lifecycle. If you need
 to write test cases, follow the official unit testing and end-to-end testing documentation on the
-https://docs.angularjs.org/guide/unit-testing[official AngularJS page].
+https://docs.angularjs.org/guide/unit-testing[official AngularJS page^].
+
 
 
 == Great work! You're done!
