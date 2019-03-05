@@ -43,7 +43,7 @@ include::finish/src/resources/artists.json[]
 ----
 
 You will implement an AngularJS client that consumes this JSON and displays its contents at the
-following URL: `\http://localhost:9080/index.html`.
+following URL: `\http://localhost:9080`.
 
 
 To learn more about REST services and how you can write them, see
@@ -164,7 +164,7 @@ Once the controller is attached, the [hotspot=14 file=0]`artists` property can b
 using the [hotspot=15 file=0]`{{ artists }}` expression. You can use the [hotspot=14 file=0]`ng-repeat` directive to iterate over the contents
 of the [hotspot=14 file=0]`artists` property.
 
-After everything is set up, point your browser to the application root http://localhost:9080/index.html[http://localhost:9080/index.html^] to
+After everything is set up, point your browser to the application root http://localhost:9080[http://localhost:9080^] to
 see the following output:
 
 [subs="quotes", role="no_copy"]
@@ -182,7 +182,7 @@ dj wrote 0 albums:
 
 No explicit code directly uses the consumed artist JSON, so you do not need to write any test cases for this guide.
 
-Whenever you change your AngularJS implementation, the application root at http://localhost:9080/index.html[http://localhost:9080/index.html^] will
+Whenever you change your AngularJS implementation, the application root at http://localhost:9080[http://localhost:9080^] will
 reflect the changes automatically. You can visit the root to manually check whether the artist JSON
 was consumed correctly.
 
