@@ -43,7 +43,7 @@ include::finish/src/resources/artists.json[]
 ----
 
 You will implement an AngularJS client that consumes this JSON and displays its contents at the
-following URL: \http://localhost:9080/index.html.
+following URL: `\http://localhost:9080/index.html`.
 
 
 To learn more about REST services and how you can write them, see
