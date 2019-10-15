@@ -139,7 +139,7 @@ This file will contain all elements and attributes specific to AngularJS.
 ----
 
 index.html
-[source, html, linenums, role='code_column tags=html']
+[source, html, linenums, role='code_column tags=html hide_tags=copyright']
 ----
 include::finish/src/main/webapp/index.html[]
 ----
