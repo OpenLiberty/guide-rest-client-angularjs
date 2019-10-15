@@ -36,7 +36,7 @@ The REST service that provides the artists and albums resource was written for y
 responds with the [hotspot]`artists.json`.
 
 artists.json
-[source, json, linenums, role="code_column"]
+[source, json, linenums, role='code_column']
 ----
 include::finish/src/resources/artists.json[]
 ----
