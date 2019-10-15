@@ -99,28 +99,28 @@ application module, which will be bootstrapped to launch the application.
 ----
 
 consume-rest.js
-[source, javascript, linenums, role="code_column"]
+[source, javascript, linenums, role='code_column']
 ----
-include::finish/src/main/webapp/js/consume-rest.js[tags=**]
+include::finish/src/main/webapp/js/consume-rest.js[]
 ----
 
-The application module is defined by [hotspot=1]`consumeRestApp`.
+The application module is defined by [hotspot=consumeRestApp]`consumeRestApp`.
 
 Your application will need some way of communicating with RESTful web services in order to retrieve their resources.
 In the case of this guide, your application will need to communicate with the artists service to retrieve the artists JSON.
 While there exists a variety of ways of doing this, you can use the fairly straightforward AngularJS
-[hotspot=3]`$resource` service.
+[hotspot=resource-module]`$resource` service.
 
-The [hotspot=1]`ngResource` module is registered as it is appended after [hotspot=1]`consumeRestApp`. By registering another module, you are performing a dependency injection, exposing all functionalities
+The [hotspot=consumeRestApp]`ngResource` module is registered as it is appended after [hotspot=consumeRestApp]`consumeRestApp`. By registering another module, you are performing a dependency injection, exposing all functionalities
 of that module to your main application module.
 
-Next, the [hotspot=3-5]`Artists` AngularJS service is defined by using the Factory recipe. The Factory recipe constructs a new service instance with the return value of a passed in function. In this case,
-the [hotspot=3]`$resource` module that you imported earlier is the passed in function. Target the artist JSON
-URL in the [hotspot=4]`$resource()` call. 
+Next, the [hotspot=Artists]`Artists` AngularJS service is defined by using the Factory recipe. The Factory recipe constructs a new service instance with the return value of a passed in function. In this case,
+the [hotspot=resource-module]`$resource` module that you imported earlier is the passed in function. Target the artist JSON
+URL in the [hotspot=resource-call]`$resource()` call. 
 
 
-The [hotspot=7-13]`controller` controls the flow of data in your application.Each controller is instantiated with
-its own isolated scope, accessible through the [hotspot=9]`$scope` parameter. All data that is bound to this
+The [hotspot=Controller]`controller` controls the flow of data in your application.Each controller is instantiated with
+its own isolated scope, accessible through the [hotspot=Scope]`$scope` parameter. All data that is bound to this
 parameter is available in the view to which the controller is attached.
 
 You can now access the `artists` property from the template at the point in the Document Object
@@ -139,29 +139,29 @@ This file will contain all elements and attributes specific to AngularJS.
 ----
 
 index.html
-[source, html, linenums, role="code_column"]
+[source, html, linenums, role='code_column tags=html']
 ----
-include::finish/src/main/webapp/index.html[tags=html]
+include::finish/src/main/webapp/index.html[]
 ----
 
 consume-rest.js
-[source, javascript, linenums, role="code_column"]
+[source, javascript, linenums, role='code_column']
 ----
-include::finish/src/main/webapp/js/consume-rest.js[tags=**]
+include::finish/src/main/webapp/js/consume-rest.js[]
 ----
 
-Before your application is bootstrapped, you must pull in two [hotspot=4-9 file=0]`AngularJS` libraries and import [hotspot=10 file=0]`consume-rest.js`.
+Before your application is bootstrapped, you must pull in two [hotspot=AngularJS file=0]`AngularJS` libraries and import [hotspot=consume-rest file=0]`consume-rest.js`.
 
 The first import is the base AngularJS library. The second library is responsible for providing the APIs
-for the `$resource` service. The application is bootstrapped because the [hotspot=12 file=0]`consumeRestApp` application module is attached to the [hotspot=12-25 file=0]`body` of the template.
+for the `$resource` service. The application is bootstrapped because the [hotspot=consumeRestApp file=0]`consumeRestApp` application module is attached to the [hotspot=body file=0]`body` of the template.
 
-Next, the [hotspot=13 file=0]`ArtistCtrl` controller is attached to the DOM to create a new child scope. The controller will make the
-[hotspot=9 file=1]`artists` property of the [hotspot=9 file=1]`$scope` object available to access at the point in the DOM where the
+Next, the [hotspot=ArtistCtrl file=0]`ArtistCtrl` controller is attached to the DOM to create a new child scope. The controller will make the
+[hotspot=Scope file=1]`artists` property of the [hotspot=Scope file=1]`$scope` object available to access at the point in the DOM where the
 controller is attached.
 
-Once the controller is attached, the [hotspot=14 file=0]`artists` property can be data-bounded to the template and accessed
-using the [hotspot=15 file=0]`{{ artists }}` expression. You can use the [hotspot=14 file=0]`ng-repeat` directive to iterate over the contents
-of the [hotspot=14 file=0]`artists` property.
+Once the controller is attached, the [hotspot=Artists file=0]`artists` property can be data-bounded to the template and accessed
+using the [hotspot=artist-info file=0]`{{ artists }}` expression. You can use the [hotspot=ArtistCtrl file=0]`ng-repeat` directive to iterate over the contents
+of the [hotspot=ArtistCtrl file=0]`artists` property.
 
 After everything is set up, point your browser to the application root http://localhost:9080[http://localhost:9080^] to
 see the following output:

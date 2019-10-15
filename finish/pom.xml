@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>io.openliberty.guides</groupId>
-    <artifactId>io.openliberty.guides.consumingrest-ajs</artifactId>
+    <artifactId>guide-rest-client-angularjs</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
