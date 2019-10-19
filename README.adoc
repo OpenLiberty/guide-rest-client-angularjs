@@ -160,8 +160,8 @@ Next, the [hotspot=ArtistCtrl file=0]`ArtistCtrl` controller is attached to the 
 controller is attached.
 
 Once the controller is attached, the [hotspot=Artists file=0]`artists` property can be data-bounded to the template and accessed
-using the [hotspot=artist-info file=0]`{{ artists }}` expression. You can use the [hotspot=ArtistCtrl file=0]`ng-repeat` directive to iterate over the contents
-of the [hotspot=ArtistCtrl file=0]`artists` property.
+using the [hotspot=artist-info file=0]`{{ artists }}` expression. You can use the [hotspot=Artists file=0]`ng-repeat` directive to iterate over the contents
+of the [hotspot=Artists file=0]`artists` property.
 
 After everything is set up, point your browser to the application root http://localhost:9080[http://localhost:9080^] to
 see the following output:
