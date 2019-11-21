@@ -1,4 +1,5 @@
-<!-- 
+<!-- tag::copyright[] -->
+<!--
   Copyright (c) 2016 IBM Corp.
  
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,27 +14,40 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
+<!-- end::copyright[] -->
 <!-- tag::html[] -->
 <!DOCTYPE html>
 <html>
     <!-- tag::head[] -->
     <head>
+        <!-- tag::AngularJS[] -->
         <script 
             src='http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js'/>
         </script>
         <script 
            src='http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-resource.js'>
         </script>
+        <!-- end::AngularJS[] -->
+        <!-- tag::consume-rest[] -->
         <script src='./js/consume-rest.js'></script>
+        <!-- end::consume-rest[] -->
     </head>
     <!-- end::head[] -->
     <!-- tag::body[] -->
+    <!-- tag::consumeRestApp[] -->
     <body ng-app='consumeRestApp'>
+    <!-- end::consumeRestApp[] -->
         <!-- tag::controller[] -->
+        <!-- tag::ArtistCtrl[] -->
         <div ng-controller='ArtistsCtrl'>
+        <!-- end::ArtistCtrl[] -->
             <!-- tag::repeat[] -->
+            <!-- tag::Artists[]-->
             <div ng-repeat='artist in artists'>
+            <!-- end::Artists[] -->
+                <!-- tag::artist-info[] -->
                 <p>{{ artist.name }} wrote {{ artist.albums.length }} albums:</p>
+                <!-- end::artist-info[] -->
                 <div ng-repeat='album in artist.albums'>
                     <p style='text-indent: 20px'>
                         Album titled <b>{{ album.title }}</b> by 
