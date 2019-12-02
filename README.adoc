@@ -14,6 +14,8 @@
 :page-permalink: /guides/{projectid}
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/master
 :source-highlighter: prettify
+:page-seo-title: Consuming a RESTful web service with AngularJS
+:page-seo-description: A tutorial on how to access a REST service and deserialize the returned JSON  by using the high-level `$resource` service of AngularJS.
 :guide-author: Open Liberty
 = Consuming a RESTful web service with AngularJS
 
@@ -65,16 +67,12 @@ include::{common-includes}/gitclone.adoc[]
 Before you begin the implementation, start the provided REST service so that the artist JSON is
 available to you.
 
-To start the REST service, run the Maven `install` and `liberty:start-server` goals from the `start`
-directory:
+Navigate to the `start` directory to begin.
 
 [role='command']
-----
-mvn install liberty:start-server
-----
+include::{common-includes}/devmode-start.adoc[]
 
 After you start the server, you can find your artist JSON at the following URL: http://localhost:9080/artists[http://localhost:9080/artists^].
-
 
 Any local changes to your JavaScript and HTML are picked up automatically. After you start the Open
 Liberty server, you do not need to restart it.
@@ -85,8 +83,6 @@ Liberty server, you do not need to restart it.
 // =================================================================================================
 
 == Creating the AngularJS controller
-
-Navigate to the start directory to begin. 
 
 Begin by registering your application module. Every application must contain at least one module, the
 application module, which will be bootstrapped to launch the application.
@@ -116,8 +112,7 @@ of that module to your main application module.
 
 Next, the [hotspot=Artists]`Artists` AngularJS service is defined by using the Factory recipe. The Factory recipe constructs a new service instance with the return value of a passed in function. In this case,
 the [hotspot=resource-module]`$resource` module that you imported earlier is the passed in function. Target the artist JSON
-URL in the [hotspot=resource-call]`$resource()` call. 
-
+URL in the [hotspot=resource-call]`$resource()` call.
 
 The [hotspot=Controller]`controller` controls the flow of data in your application.Each controller is instantiated with
 its own isolated scope, accessible through the [hotspot=Scope]`$scope` parameter. All data that is bound to this
@@ -185,17 +180,12 @@ Whenever you change your AngularJS implementation, the application root at http:
 reflect the changes automatically. You can visit the root to manually check whether the artist JSON
 was consumed correctly.
 
-When you are done checking the application root, stop the Open Liberty server by running the following command:
-[role='command']
-```
-mvn liberty:stop-server
-```
+When you are done checking the application root, exit development mode by pressing CTRL+C in the shell session where you ran the server, or by typing q and then pressing the enter/return key.
 
 Although this guide did not teach you how to build logic, you will likely build logic when you develop your own
 applications, and testing will become a crucial part of your development lifecycle. If you need
 to write test cases, follow the official unit testing and end-to-end testing documentation on the
 https://docs.angularjs.org/guide/unit-testing[official AngularJS page^].
-
 
 
 == Great work! You're done!
