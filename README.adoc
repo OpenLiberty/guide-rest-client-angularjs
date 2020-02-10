@@ -14,8 +14,8 @@
 :page-permalink: /guides/{projectid}
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/master
 :source-highlighter: prettify
-:page-seo-title: Consuming a RESTful web service with AngularJS
-:page-seo-description: A tutorial on how to access a REST service and deserialize the returned JSON  by using the high-level `$resource` service of AngularJS.
+:page-seo-title: Consuming a RESTful Java web service with AngularJS
+:page-seo-description: A getting started tutorial with examples on how to access a RESTful Java micoservice and deserialize the returned JSON by using the high-level `$resource` service of AngularJS.
 :guide-author: Open Liberty
 = Consuming a RESTful web service with AngularJS
 
