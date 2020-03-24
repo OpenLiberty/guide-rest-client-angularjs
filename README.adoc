@@ -77,6 +77,21 @@ After you start the server, you can find your artist JSON at the following URL: 
 Any local changes to your JavaScript and HTML are picked up automatically. After you start the Open
 Liberty server, you do not need to restart it.
 
+[role='command']
+include::{common-includes}/twyb-intro.adoc[]
+
+Navigate your browser to the application root http://localhost:9080[http://localhost:9080^] to
+see the following output:
+
+[subs="quotes", role="no_copy"]
+----
+foo wrote 2 albums:
+    Album titled *album_one* by *foo* contains *12* tracks
+    Album tilted *album_two* by *foo* contains *15* tracks
+bar wrote 1 albums:
+    Album titled *foo walks into a bar* by *bar* contains *12* tracks
+dj wrote 0 albums:
+----
 
 // =================================================================================================
 // Guide
