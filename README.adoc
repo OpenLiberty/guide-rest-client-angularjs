@@ -70,14 +70,6 @@ available to you.
 Navigate to the `start` directory to begin.
 
 [role='command']
-include::{common-includes}/devmode-start.adoc[]
-
-After you start the server, you can find your artist JSON at the following URL: http://localhost:9080/artists[http://localhost:9080/artists^].
-
-Any local changes to your JavaScript and HTML are picked up automatically. After you start the Open
-Liberty server, you do not need to restart it.
-
-[role='command']
 include::{common-includes}/twyb-intro.adoc[]
 
 Navigate your browser to the application root http://localhost:9080[http://localhost:9080^] to
@@ -92,6 +84,17 @@ bar wrote 1 albums:
     Album titled *foo walks into a bar* by *bar* contains *12* tracks
 dj wrote 0 albums:
 ----
+
+[role='command']
+include::{common-includes}/twyb-end.adoc[]
+
+[role='command']
+include::{common-includes}/devmode-start.adoc[]
+
+After you start the server, you can find your artist JSON at the following URL: http://localhost:9080/artists[http://localhost:9080/artists^].
+
+Any local changes to your JavaScript and HTML are picked up automatically. After you start the Open
+Liberty server, you do not need to restart it.
 
 // =================================================================================================
 // Guide
