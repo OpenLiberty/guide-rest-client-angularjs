@@ -1,4 +1,4 @@
-// Copyright (c) 2017, 2019 IBM Corporation and others.
+// Copyright (c) 2017, 2020 IBM Corporation and others.
 // Licensed under Creative Commons Attribution-NoDerivatives
 // 4.0 International (CC BY-ND 4.0)
 //   https://creativecommons.org/licenses/by-nd/4.0/
@@ -57,18 +57,6 @@ https://openliberty.io/guides/rest-intro.html[Creating a RESTful web service^].
 [role='command']
 include::{common-includes}/gitclone.adoc[]
 
-
-// =================================================================================================
-// Starting the service
-// =================================================================================================
-
-== Starting the service
-
-Before you begin the implementation, start the provided REST service so that the artist JSON is
-available to you.
-
-Navigate to the `start` directory to begin.
-
 [role='command']
 include::{common-includes}/twyb-intro.adoc[]
 
@@ -87,6 +75,17 @@ dj wrote 0 albums:
 
 [role='command']
 include::{common-includes}/twyb-end.adoc[]
+
+// =================================================================================================
+// Starting the service
+// =================================================================================================
+
+== Starting the service
+
+Before you begin the implementation, start the provided REST service so that the artist JSON is
+available to you.
+
+Navigate to the `start` directory to begin.
 
 [role='command']
 include::{common-includes}/devmode-start.adoc[]
