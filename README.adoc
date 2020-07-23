@@ -90,10 +90,10 @@ Navigate to the `start` directory to begin.
 [role='command']
 include::{common-includes}/devmode-start.adoc[]
 
-After you start the server, you can find your artist JSON at the following URL: http://localhost:9080/artists[http://localhost:9080/artists^].
+Once the server is started, you can find your artist JSON at the following URL: http://localhost:9080/artists[http://localhost:9080/artists^].
 
-Any local changes to your JavaScript and HTML are picked up automatically. After you start the Open
-Liberty server, you do not need to restart it.
+Any local changes to your JavaScript and HTML are picked up automatically, so you don't need to 
+restart the server.
 
 // =================================================================================================
 // Guide
@@ -164,8 +164,8 @@ include::finish/src/main/webapp/js/consume-rest.js[]
 
 Before your application is bootstrapped, you must pull in two [hotspot=AngularJS file=0]`AngularJS` libraries and import [hotspot=consume-rest file=0]`consume-rest.js`.
 
-The first import is the base AngularJS library. The second library is responsible for providing the APIs
-for the `$resource` service. The application is bootstrapped because the [hotspot=consumeRestApp file=0]`consumeRestApp` application module is attached to the [hotspot=body file=0]`body` of the template.
+The first import is the base AngularJS library, defining the `angular.js` file in your HTML. The second import is the library responsible for providing the APIs for the `$resource` service, defining the 
+`angular-resource.js` file in your HTML. The application is bootstrapped because the [hotspot=consumeRestApp file=0]`consumeRestApp` application module is attached to the [hotspot=body file=0]`body` of the template.
 
 Next, the [hotspot=ArtistCtrl file=0]`ArtistCtrl` controller is attached to the DOM to create a new child scope. The controller will make the
 [hotspot=Scope file=1]`artists` property of the [hotspot=Scope file=1]`$scope` object available to access at the point in the DOM where the
@@ -199,9 +199,7 @@ was consumed correctly.
 
 When you are done checking the application root, exit development mode by pressing CTRL+C in the command-line session where you ran the server, or by typing q and then pressing the enter/return key.
 
-Although this guide did not teach you how to build logic, you will likely build logic when you develop your own
-applications, and testing will become a crucial part of your development lifecycle. If you need
-to write test cases, follow the official unit testing and end-to-end testing documentation on the
+When you develop your own applications, and testing will become a crucial part of your development lifecycle. If you need to write test cases, follow the official unit testing and end-to-end testing documentation on the
 https://docs.angularjs.org/guide/unit-testing[official AngularJS page^].
 
 
