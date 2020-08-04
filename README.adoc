@@ -164,8 +164,8 @@ include::finish/src/main/webapp/js/consume-rest.js[]
 
 Before your application is bootstrapped, you must pull in two [hotspot=AngularJS file=0]`AngularJS` libraries and import [hotspot=consume-rest file=0]`consume-rest.js`.
 
-The first import is the base AngularJS library, defining the `angular.js` script in your HTML. The second import is the library responsible for providing the APIs for the `$resource` service, defining the 
-`angular-resource.js` script in your HTML. The application is bootstrapped because the [hotspot=consumeRestApp file=0]`consumeRestApp` application module is attached to the [hotspot=body file=0]`body` of the template.
+The first import is the base AngularJS library, defining the [hotspot=angular-script file=0]`angular.js` script in your HTML. The second import is the library responsible for providing the APIs for the `$resource` service, defining the 
+[hotspot=angular-resource-script file=0]`angular-resource.js` script in your HTML. The application is bootstrapped because the [hotspot=consumeRestApp file=0]`consumeRestApp` application module is attached to the [hotspot=body file=0]`body` of the template.
 
 Next, the [hotspot=ArtistCtrl file=0]`ArtistCtrl` controller is attached to the DOM to create a new child scope. The controller will make the
 [hotspot=Scope file=1]`artists` property of the [hotspot=Scope file=1]`$scope` object available to access at the point in the DOM where the
