@@ -12,7 +12,7 @@
 :page-releasedate: 2017-11-20
 :page-related-guides: ['rest-intro', 'rest-client-java']
 :page-permalink: /guides/{projectid}
-:common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/master
+:common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/prod
 :source-highlighter: prettify
 :page-seo-title: Consuming a RESTful Java web service with AngularJS
 :page-seo-description: A getting started tutorial with examples on how to access a RESTful Java micoservice and deserialize the returned JSON by using the high-level `$resource` service of AngularJS.
