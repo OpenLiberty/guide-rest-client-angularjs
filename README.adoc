@@ -43,8 +43,16 @@ artists.json
 include::finish/src/resources/artists.json[]
 ----
 
+// Static guide instruction
+ifndef::cloud-hosted[]
 You will implement an AngularJS client that consumes this JSON and displays its contents at the
 following URL: `\http://localhost:9080`.
+endif::[]
+
+// Cloud-hosted guide instruction
+ifdef::cloud-hosted[]
+You will implement an AngularJS client that consumes this JSON and displays its contents at a URL.
+endif::[]
 
 
 To learn more about REST services and how you can write them, see
@@ -60,8 +68,17 @@ include::{common-includes}/gitclone.adoc[]
 [role='command']
 include::{common-includes}/twyb-intro.adoc[]
 
+ifndef::cloud-hosted[]
 Navigate your browser to the application root http://localhost:9080[http://localhost:9080^] to
 see the following output:
+endif::[]
+
+ifdef::cloud-hosted[]
+When the server is running, select **Launch Application** from the menu of the IDE, 
+type in **9080** to specify the port number for the microservice, and click the **OK** button. 
+You're redirected to a URL similar to **`https://accountname-9080.theiadocker-4.proxy.cognitiveclass.ai`**, 
+where **accountname** is your account name. See the following output:
+endif::[]
 
 [subs="quotes", role="no_copy"]
 ----
@@ -90,7 +107,19 @@ Navigate to the `start` directory to begin.
 [role='command']
 include::{common-includes}/devmode-lmp33-start.adoc[]
 
+ifndef::cloud-hosted[]
 After the server is started, you can find your artist JSON at the following URL: http://localhost:9080/artists[http://localhost:9080/artists^].
+endif::[]
+
+// Cloud hosted guide instruction
+ifdef::cloud-hosted[]
+After the server is started, use the following command to get the URL.
+Open your browser and view your artist JSON by going to the URL that the command returns.
+```
+echo http://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')/artists
+```
+{: codeblock} 
+endif::[]
 
 Any local changes to your JavaScript and HTML are picked up automatically, so you don't need to 
 restart the server.
@@ -175,8 +204,17 @@ Once the controller is attached, the [hotspot=Artists file=0]`artists` property 
 using the [hotspot=artist-info file=0]`{{ artists }}` expression. You can use the [hotspot=Artists file=0]`ng-repeat` directive to iterate over the contents
 of the [hotspot=Artists file=0]`artists` property.
 
+ifndef::cloud-hosted[]
 After everything is set up, point your browser to the application root http://localhost:9080[http://localhost:9080^] to
 see the following output:
+endif::[]
+
+ifdef::cloud-hosted[]
+After everything is set up, select **Launch Application** from the menu of the IDE, 
+type in **9080** to specify the port number for the microservice, and click the **OK** button. 
+You're redirected to a URL similar to **`https://accountname-9080.theiadocker-4.proxy.cognitiveclass.ai`**, 
+where **accountname** is your account name. See the following output:
+endif::[]
 
 [subs="quotes", role="no_copy"]
 ----
@@ -193,9 +231,17 @@ dj wrote 0 albums:
 
 No explicit code directly uses the consumed artist JSON, so you do not need to write any test cases for this guide.
 
+ifndef::cloud-hosted[]
 Whenever you change your AngularJS implementation, the application root at http://localhost:9080[http://localhost:9080^] will
 reflect the changes automatically. You can visit the root to manually check whether the artist JSON
 was consumed correctly.
+endif::[]
+
+ifdef::cloud-hosted[]
+Whenever you change your AngularJS implementation, the application root at **`https://accountname-9080.theiadocker-4.proxy.cognitiveclass.ai`** will
+reflect the changes automatically. You can visit the root to manually check whether the artist JSON
+was consumed correctly.
+endif::[]
 
 When you are done checking the application root, exit development mode by pressing CTRL+C in the command-line session where you ran the server, or by typing q and then pressing the `enter/return` key.
 
