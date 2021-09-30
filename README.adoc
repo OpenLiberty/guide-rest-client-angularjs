@@ -259,7 +259,8 @@ see the following output:
 endif::[]
 
 ifdef::cloud-hosted[]
-When the server is running, run the following command to get the URL to access it.
+When the server is running, select **Terminal** > **New Terminal** from the menu of the IDE to open another command-line session.
+Run the following command to get the URL to access the server.
 ```
 echo http://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')
 ```
@@ -303,7 +304,6 @@ https://docs.angularjs.org/guide/unit-testing[official AngularJS website^].
 
 == Great work! You're done!
 
-You have just accessed a simple RESTful web service and consumed its resources by using AngularJS in
-Open Liberty.
+You have just accessed a simple RESTful web service and consumed its resources by using AngularJS in Open Liberty.
 
 include::{common-includes}/attribution.adoc[subs="attributes"]
