@@ -112,7 +112,8 @@ see the following output:
 endif::[]
 
 ifdef::cloud-hosted[]
-When the server is running, run the following command to get the URL to access it.
+When the server is running, select **Terminal** > **New Terminal** from the menu of the IDE to open another command-line session.
+Run the following command to get the URL to access it.
 ```
 echo http://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')
 ```
@@ -154,8 +155,7 @@ endif::[]
 
 // Cloud hosted guide instruction
 ifdef::cloud-hosted[]
-After the server is started, use the following command to get the URL to view your artist JSON.
-Open your browser and view the URL that the command returns.
+After the server is started, you can use the following command to get the URL to view your artist JSON.
 ```
 echo http://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')/artists
 ```
