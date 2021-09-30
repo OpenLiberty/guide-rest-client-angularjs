@@ -73,22 +73,22 @@ ifndef::cloud-hosted[]
 To try out the application, first go to the `finish` directory and run the following
 Maven goal to build the application and deploy it to Open Liberty:
 
-[role='command']
 ```
 cd finish
 mvn liberty:run
 ```
+{: codeblock}
 endif::[]
 
 ifdef::cloud-hosted[]
 To try out the application, go to the `finish` directory and
 run the following command to specify the location of `artists.json` on the cloud:
 
-[role='command']
 ```
 cd finish
 sed -i 's=http://localhost:9080/artists='"http://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')/artists"'=' src/main/webapp/js/consume-rest.js
 ```
+{: codeblock}
 
 Next, run the following Maven goal to build the application and deploy it to Open Liberty:
 
