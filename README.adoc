@@ -77,7 +77,6 @@ Maven goal to build the application and deploy it to Open Liberty:
 cd finish
 mvn liberty:run
 ```
-{: codeblock}
 endif::[]
 
 ifdef::cloud-hosted[]
