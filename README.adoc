@@ -145,6 +145,13 @@ Before you begin the implementation, start the provided REST service so that the
 available to you.
 
 Navigate to the `start` directory to begin.
+// cloud hosted instruction
+ifdef::cloud-hosted[]
+```
+cd /home/projects/guide-rest-client-angularjs/start
+```
+{: codeblock}
+endif::[]
 
 [role='command']
 include::{common-includes}/devmode-lmp33-start.adoc[]
