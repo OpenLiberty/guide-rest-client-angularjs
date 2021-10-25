@@ -34,7 +34,7 @@ You will learn how to access a REST service and deserialize the returned JSON th
 artists and their albums by using the high-level `$resource` service of AngularJS.
 
 The REST service that provides the artists and albums resource was written for you in advance and
-responds with the [hotspot]`artists.json`, located in the `start/src/resources` directory.
+responds with the [hotspot]`artists.json`.
 
 artists.json
 [source, json, linenums, role='code_column']
