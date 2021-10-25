@@ -197,7 +197,7 @@ include::finish/src/main/webapp/js/consume-rest.js[]
 ifdef::cloud-hosted[]
 Run the following command to specify the specific address of your **artists.json** in the IBM cloud environment.
 ```
-sed -i 's=http://localhost:9080/artists='"http://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')/artists"'=' home/project/guide-rest-client-angularjs/start/src/main/webapp/js/consume-rest.js
+sed -i 's=http://localhost:9080/artists='"http://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')/artists"'=' /home/project/guide-rest-client-angularjs/start/src/main/webapp/js/consume-rest.js
 ```
 {: codeblock}
 endif::[]
