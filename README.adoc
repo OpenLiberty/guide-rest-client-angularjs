@@ -164,7 +164,7 @@ endif::[]
 ifdef::cloud-hosted[]
 After the server is started, run the following curl command to view your artist JSON.
 ```
-curl -s http://localhost:9080/artists
+curl -s http://localhost:9080/artists | jq
 ```
 {: codeblock} 
 endif::[]
