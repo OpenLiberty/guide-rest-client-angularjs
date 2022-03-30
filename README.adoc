@@ -75,18 +75,16 @@ mvn liberty:run
 endif::[]
 
 ifdef::cloud-hosted[]
-In this IBM cloud environment, you need to update the URL to access the **artists.json** in the **consume-rest.js** file. Run the following commands to go to the **finish** directory and update the **consume-rest.js** file:
-```
+In this IBM cloud environment, you need to update the URL to access the ***artists.json*** in the ***consume-rest.js*** file. Run the following commands to go to the ***finish*** directory and update the ***consume-rest.js*** file:
+```bash
 cd finish
 sed -i 's=http://localhost:9080/artists='"http://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')/artists"'=' src/main/webapp/js/consume-rest.js
 ```
-{: codeblock}
 
 To try out the application, run the following Maven goal to build the application and deploy it to Open Liberty:
-```
+```bash
 mvn liberty:run
 ```
-{: codeblock}
 endif::[]
 
 After you see the following message, your application server is ready:
@@ -102,11 +100,8 @@ Navigate your browser to the application root http://localhost:9080[http://local
 endif::[]
 
 ifdef::cloud-hosted[]
-When the server is running, select **Terminal** > **New Terminal** from the menu of the IDE to open another command-line session. Open your browser and check out the application by going to the URL that the following command returns:
-```
-echo http://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')
-```
-{: codeblock}
+When the server is running, click the following button to check out the application:
+::startApplication{port="9080" display="external" name="Visit application" route="/"}
 
 See the following output:
 endif::[]
@@ -135,10 +130,9 @@ Before you begin the implementation, start the provided REST service so that the
 Navigate to the `start` directory to begin.
 // cloud hosted instruction
 ifdef::cloud-hosted[]
-```
+```bash
 cd /home/project/guide-rest-client-angularjs/start
 ```
-{: codeblock}
 endif::[]
 
 [role='command']
@@ -151,10 +145,9 @@ endif::[]
 // Cloud hosted guide instruction
 ifdef::cloud-hosted[]
 After the server is started, run the following curl command to view your artist JSON.
-```
+```bash
 curl -s http://localhost:9080/artists | jq
 ```
-{: codeblock} 
 endif::[]
 
 Any local changes to your JavaScript and HTML are picked up automatically, so you don't need to restart the server.
@@ -181,11 +174,10 @@ include::finish/src/main/webapp/js/consume-rest.js[]
 ----
 
 ifdef::cloud-hosted[]
-Run the following command to update the URL to access the **artists.json** in the **consume-rest.js** file:
-```
+Run the following command to update the URL to access the ***artists.json*** in the ***consume-rest.js*** file:
+```bash
 sed -i 's=http://localhost:9080/artists='"http://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')/artists"'=' /home/project/guide-rest-client-angularjs/start/src/main/webapp/js/consume-rest.js
 ```
-{: codeblock}
 endif::[]
 
 The application module is defined by [hotspot=consumeRestApp]`consumeRestApp`.
@@ -236,11 +228,8 @@ After everything is set up, point your browser to the application root http://lo
 endif::[]
 
 ifdef::cloud-hosted[]
-After everything is set up, open your browser and check out the application by going to the URL that the following command returns:
-```
-echo http://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')
-```
-{: codeblock}
+After everything is set up,click the following button to check out the application:
+::startApplication{port="9080" display="external" name="Visit application" route="/"}
 
 See the following output:
 endif::[]
