@@ -101,6 +101,7 @@ endif::[]
 
 ifdef::cloud-hosted[]
 When the server is running, click the following button to check out the application:
+
 ::startApplication{port="9080" display="external" name="Visit application" route="/"}
 
 See the following output:
@@ -229,6 +230,7 @@ endif::[]
 
 ifdef::cloud-hosted[]
 After everything is set up,click the following button to check out the application:
+
 ::startApplication{port="9080" display="external" name="Visit application" route="/"}
 
 See the following output:
