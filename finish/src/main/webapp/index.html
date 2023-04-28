@@ -23,37 +23,37 @@
         <!-- tag::AngularJS[] -->
         <!-- tag::angular-script[] -->
         <script 
-            src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js'/>
+            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"/>
         </script>
         <!-- end::angular-script[] -->
         <!-- tag::angular-resource-script[] -->
         <script 
-           src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-resource.js'>
+           src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-resource.js">
         </script>
         <!-- end::angular-resource-script[] -->
         <!-- end::AngularJS[] -->
         <!-- tag::consume-rest[] -->
-        <script src='./js/consume-rest.js'></script>
+        <script src="./js/consume-rest.js"></script>
         <!-- end::consume-rest[] -->
     </head>
     <!-- end::head[] -->
     <!-- tag::body[] -->
     <!-- tag::consumeRestApp[] -->
-    <body ng-app='consumeRestApp'>
+    <body ng-app="consumeRestApp">
     <!-- end::consumeRestApp[] -->
         <!-- tag::controller[] -->
         <!-- tag::ArtistCtrl[] -->
-        <div ng-controller='ArtistsCtrl'>
+        <div ng-controller="ArtistsCtrl">
         <!-- end::ArtistCtrl[] -->
             <!-- tag::repeat[] -->
             <!-- tag::Artists[]-->
-            <div ng-repeat='artist in artists'>
+            <div ng-repeat="artist in artists">
             <!-- end::Artists[] -->
                 <!-- tag::artist-info[] -->
                 <p>{{ artist.name }} wrote {{ artist.albums.length }} albums:</p>
                 <!-- end::artist-info[] -->
-                <div ng-repeat='album in artist.albums'>
-                    <p style='text-indent: 20px'>
+                <div ng-repeat="album in artist.albums">
+                    <p style="text-indent: 20px">
                         Album titled <b>{{ album.title }}</b> by 
                                      <b>{{ album.artist }}</b> contains 
                                      <b>{{ album.ntracks }}</b> tracks
