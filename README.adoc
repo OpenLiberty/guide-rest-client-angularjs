@@ -87,7 +87,7 @@ mvn liberty:run
 ```
 endif::[]
 
-After you see the following message, your application server is ready:
+After you see the following message, your Liberty instance is ready:
 
 [role="no_copy"]
 ----
@@ -100,7 +100,7 @@ Navigate your browser to the application root http://localhost:9080[http://local
 endif::[]
 
 ifdef::cloud-hosted[]
-When the server is running, select **Terminal** > **New Terminal** from the menu of the IDE to open another command-line session.
+When the Liberty instance is running, select **Terminal** > **New Terminal** from the menu of the IDE to open another command-line session.
 Open your browser and check out the application by going to the URL that the following command returns:
 ```bash
 echo http://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')
@@ -142,18 +142,18 @@ endif::[]
 include::{common-includes}/devmode-lmp33-start.adoc[]
 
 ifndef::cloud-hosted[]
-After the server is started, you can find your artist JSON at the following URL: http://localhost:9080/artists[http://localhost:9080/artists^].
+After the Liberty instance is started, you can find your artist JSON at the following URL: http://localhost:9080/artists[http://localhost:9080/artists^].
 endif::[]
 
 // Cloud hosted guide instruction
 ifdef::cloud-hosted[]
-After the server is started, run the following curl command to view your artist JSON.
+After the Liberty instance is started, run the following curl command to view your artist JSON.
 ```bash
 curl -s http://localhost:9080/artists | jq
 ```
 endif::[]
 
-Any local changes to your JavaScript and HTML are picked up automatically, so you don't need to restart the server.
+Any local changes to your JavaScript and HTML are picked up automatically, so you don't need to restart the Liberty instance.
 
 // =================================================================================================
 // Guide
@@ -262,7 +262,7 @@ ifdef::cloud-hosted[]
 Whenever you change your AngularJS implementation, the application root at `http://accountname-9080.theiadocker-4.proxy.cognitiveclass.ai` will reflect the changes automatically. You can visit the root to manually check whether the artist JSON was consumed correctly.
 endif::[]
 
-When you are done checking the application root, exit dev mode by pressing CTRL+C in the command-line session where you ran the server, or by typing q and then pressing the `enter/return` key.
+When you are done checking the application root, exit dev mode by pressing CTRL+C in the command-line session where you ran the Liberty, or by typing `q` and then pressing the `enter/return` key.
 
 When you develop your own applications, testing becomes a crucial part of your development lifecycle. If you need to write test cases, follow the official unit testing and end-to-end testing documentation on the https://docs.angularjs.org/guide/unit-testing[official AngularJS website^].
 
