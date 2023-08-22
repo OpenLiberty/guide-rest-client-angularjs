@@ -78,7 +78,7 @@ ifdef::cloud-hosted[]
 In this IBM cloud environment, you need to update the URL to access the ***artists.json*** in the ***consume-rest.js*** file. Run the following commands to go to the ***finish*** directory and update the ***consume-rest.js*** file:
 ```bash
 cd finish
-sed -i 's=http://localhost:9080/artists='"http://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')/artists"'=' src/main/webapp/js/consume-rest.js
+sed -i 's=http://localhost:9080/artists='"https://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')/artists"'=' src/main/webapp/js/consume-rest.js
 ```
 
 To try out the application, run the following Maven goal to build the application and deploy it to Open Liberty:
@@ -103,7 +103,7 @@ ifdef::cloud-hosted[]
 When the Liberty instance is running, select **Terminal** > **New Terminal** from the menu of the IDE to open another command-line session.
 Open your browser and check out the application by going to the URL that the following command returns:
 ```bash
-echo http://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')
+echo https://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')
 ```
 
 See the following output:
@@ -179,7 +179,7 @@ include::finish/src/main/webapp/js/consume-rest.js[]
 ifdef::cloud-hosted[]
 Run the following command to update the URL to access the ***artists.json*** in the ***consume-rest.js*** file:
 ```bash
-sed -i 's=http://localhost:9080/artists='"http://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')/artists"'=' /home/project/guide-rest-client-angularjs/start/src/main/webapp/js/consume-rest.js
+sed -i 's=http://localhost:9080/artists='"https://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')/artists"'=' /home/project/guide-rest-client-angularjs/start/src/main/webapp/js/consume-rest.js
 ```
 endif::[]
 
@@ -233,7 +233,7 @@ endif::[]
 ifdef::cloud-hosted[]
 After everything is set up, open your browser and check out the application by going to the URL that the following command returns:
 ```bash
-echo http://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')
+echo https://${USERNAME}-9080.$(echo $TOOL_DOMAIN | sed 's/\.labs\./.proxy./g')
 ```
 
 See the following output:
