@@ -32,12 +32,6 @@
             <type>pom</type>
             <scope>provided</scope>
         </dependency>
-        <!-- For JDK 9 & 10 support -->
-        <dependency>
-            <groupId>jakarta.xml.bind</groupId>
-            <artifactId>jakarta.xml.bind-api</artifactId>
-            <version>4.0.1</version>
-        </dependency>
     </dependencies>
 
     <build>
