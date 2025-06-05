@@ -1,4 +1,4 @@
-// Copyright (c) 2017, 2023 IBM Corporation and others.
+// Copyright (c) 2017, 2025 IBM Corporation and others.
 // Licensed under Creative Commons Attribution-NoDerivatives
 // 4.0 International (CC BY-ND 4.0)
 //   https://creativecommons.org/licenses/by-nd/4.0/
@@ -68,10 +68,26 @@ The `finish` directory in the root of this guide contains the finished applicati
 // tag::runCommand[]
 ifndef::cloud-hosted[]
 To try out the application, first go to the `finish` directory and run the following Maven goal to build the application and deploy it to Open Liberty:
+
+include::{common-includes}/os-tabs.adoc[]
+
+[.tab_content.windows_section]
+--
+[role='command']
 ```
 cd finish
-mvn liberty:run
+mvnw.cmd liberty:run
 ```
+--
+
+[.tab_content.mac_section.linux_section]
+--
+[role='command']
+```
+cd finish
+./mvnw liberty:run
+```
+--
 endif::[]
 
 ifdef::cloud-hosted[]
@@ -83,7 +99,7 @@ sed -i 's=http://localhost:9080/artists='"https://${USERNAME}-9080.$(echo $TOOL_
 
 To try out the application, run the following Maven goal to build the application and deploy it to Open Liberty:
 ```bash
-mvn liberty:run
+./mvnw liberty:run
 ```
 endif::[]
 
@@ -120,7 +136,7 @@ dj wrote 0 albums:
 ----
 
 [role='command']
-include::{common-includes}/twyb-end.adoc[]
+include::{common-includes}/twyb-end-mvnw.adoc[]
 
 // =================================================================================================
 // Starting the service
@@ -139,7 +155,7 @@ cd /home/project/guide-rest-client-angularjs/start
 endif::[]
 
 [role='command']
-include::{common-includes}/devmode-lmp33-start.adoc[]
+include::{common-includes}/devmode-mvnw-start.adoc[]
 
 ifndef::cloud-hosted[]
 After the Liberty instance is started, you can find your artist JSON at the following URL: http://localhost:9080/artists[http://localhost:9080/artists^].
